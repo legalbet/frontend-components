@@ -1,11 +1,19 @@
 {
-  "name": "frontend-components",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@legalbet/frontend-components",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
+  "module": "./dist/frontend-components.es.js",
+  "types": "./dist/types/index.d.ts",
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "pnpm clean && pnpm types && vite build",
+    "types": "vue-tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
     "preview": "vite preview",
     "test": "vitest run",
     "preinstall": "npx only-allow pnpm"

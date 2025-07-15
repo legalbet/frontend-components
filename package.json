@@ -1,7 +1,7 @@
 {
   "name": "@agaronovanton/frontend-components",
   "private": false,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "module": "./dist/frontend-components.es.js",
   "types": "./dist/index.d.ts",
@@ -15,8 +15,7 @@
     "types": "vue-tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",
     "preview": "vite preview",
-    "test": "vitest run",
-    "preinstall": "npx only-allow pnpm"
+    "test": "vitest run"
   },
   "peerDependencies": {
     "vue": "^3.5.17"

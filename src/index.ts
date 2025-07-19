@@ -1,5 +1,5 @@
-import useTestComposable from './composables/useTestComposable.ts';
+import { useFormWithValidation } from '@/composables/formValidation/useFormWithValidation.ts';
 
 export { default as HelloWorld } from './components/HelloWorld.vue';
 
-export { useTestComposable };
+export { useFormWithValidation };

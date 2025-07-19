@@ -5,7 +5,9 @@
   "type": "module",
   "module": "./dist/frontend-components.es.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "restricted"
   },

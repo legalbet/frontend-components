@@ -1,5 +1,5 @@
 import { useFormWithValidation } from '@/composables/formValidation/useFormWithValidation.ts';
 
-export { default as HelloWorld } from './components/HelloWorld.vue';
+export { default as BaseButton } from '@/components/button/BaseButton.vue';
 
 export { useFormWithValidation };

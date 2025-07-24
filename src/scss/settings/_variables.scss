@@ -1,0 +1,24 @@
+@use 'colors' as c;
+$regular-text-color: c.color(dark);
+$secondary-text-color: c.color(grey);
+$regular-font: 'Wix Madefor', sans-serif;
+$header-font: 'Wix Madefor Bold', sans-serif;
+$display-font: 'Wix Madefor', sans-serif;
+$icon-font: 'legalbet-iconfont', sans-serif;
+$regular-font-size: 0.875rem;
+$regular-line: 1rem;
+$heading-line: 1.25rem;
+$paragraph-line: 1.5rem;
+//border-radius
+$block-br: 0.5rem;
+$elem-br: 0.25rem;
+
+//page blocks margins
+$page-block-margin-top: 32px;
+$page-secondary-block-margin-top-mobile: 16px;
+$page-secondary-block-margin-top: 24px;
+$sidebar-block-margin-top: 24px;
+
+//site-aside width
+$aside-width-xxl: 286px;
+$aside-width-max: 360px;

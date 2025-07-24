@@ -1,0 +1,170 @@
+@use 'sass:map';
+$colors: (
+  black: rgba(0, 0, 0, 1),
+  dark: rgba(0, 0, 0, 0.8),
+  black-80: rgba(0, 0, 0, 0.8),
+  black-60: rgba(0, 0, 0, 0.6),
+  grey: rgba(0, 0, 0, 0.4),
+  grey-light: rgba(195, 208, 217, 1),
+  grey-40: rgba(153, 153, 153, 0.2),
+  gray-100: rgba(242, 244, 247, 1),
+        gray-checkbox: rgba(216, 216, 216, 1),
+  gray-900: rgba(16, 24, 40, 1),
+  black-30: rgba(0, 0, 0, 0.3),
+  black-20: rgba(0, 0, 0, 0.2),
+  black-40: rgba(0, 0, 0, 0.4),
+  light-grey: rgba(0, 0, 0, 0.2),
+  black-10: rgba(0, 0, 0, 0.1),
+  black-12: rgba(0, 0, 0, 0.12),
+  black-8: rgba(0, 0, 0, 0.08),
+  black-5: rgba(0, 0, 0, 0.05),
+  black-3: rgba(0, 0, 0, 0.03),
+  black-80-hex: rgba(51, 51, 51, 1),
+  black-90-hex: rgba(48, 48, 48, 1),
+  white: rgba(255, 255, 255, 1),
+  white-90: rgba(255, 255, 255, 0.9),
+  white-80: rgba(255, 255, 255, 0.8),
+  white-70: rgba(255, 255, 255, 0.7),
+  white-60: rgba(255, 255, 255, 0.6),
+  white-40: rgba(255, 255, 255, 0.4),
+  white-30: rgba(255, 255, 255, 0.3),
+  white-20: rgba(255, 255, 255, 0.2),
+  white-15: rgba(255, 255, 255, 0.15),
+  white-10: rgba(255, 255, 255, 0.1),
+  white-5: rgba(255, 255, 255, 0.05),
+  border-almost-white: rgba(249, 249, 250, 1),
+  divide-light: rgba(255, 255, 255, 0.1),
+  light: rgba(240, 241, 242, 1),
+  light-40: rgba(240, 241, 242, 0.4),
+  light-darker: rgba(232, 232, 232, 1),
+  divide: rgba(153, 153, 153, 1),
+  divide-solid: rgba(229, 229, 229, 1),
+  grey-solid: rgba(64, 69, 73, 1),
+  grey-hover: rgba(64, 66, 74, 1),
+  grey-active: rgba(26, 28, 32, 1),
+  grey-light-10: rgba(204, 204, 204, 1),
+  brand-color: rgba(208, 2, 27, 1),
+  brand-color-lighter: rgba(217, 52, 73, 1),
+  brand-color-darker: rgba(186, 2, 24, 1),
+  brand-color-focus: rgba(166, 2, 22, 1),
+  red: rgba(246, 71, 71, 1),
+  red-light: rgba(253, 218, 218, 1),
+  red-30: rgba(246, 71, 71, 0.3),
+  red-20: rgba(246, 71, 71, 0.2),
+  red-10: rgba(246, 71, 71, 0.1),
+  red-150: rgba(251, 163, 163, 1),
+  red-light2: rgba(254, 237, 237, 1),
+  red-hover: rgba(217, 53, 73, 1),
+  red-click: rgba(188, 2, 24),
+  scarlet: rgba(208, 2, 27, 1),
+  blue: rgba(52, 152, 219, 1),
+  blue-lighter: rgba(91, 172, 226, 1),
+  blue-darker: rgba(46, 136, 196, 1),
+  blue-dark-lighter: rgba(62, 27, 199, 1),
+  blue-dark: rgba(23, 24, 115, 1),
+  blue-focus: rgba(42, 122, 175, 1),
+  blue-hover: rgba(79, 160, 255, 1),
+  blue-active: rgba(48, 126, 218, 1),
+  blue-vk: rgba(92, 130, 171, 1),
+  blue-tw: rgba(85, 172, 238, 1),
+  blue-90: rgba(52, 152, 219, 0.9),
+  blue-50: rgba(52, 152, 219, 0.5),
+  blue-500: rgba(52, 152, 219, 0.05),
+  blue-30: rgba(52, 152, 219, 0.3),
+  blue-20: rgba(52, 152, 219, 0.2),
+  blue-10: rgba(52, 152, 219, 0.1),
+  blue-1xstavka: rgba(0, 102, 255, 1),
+  blue-perfect: rgba(53, 145, 253, 1),
+  blue-perfect-30: rgba(53, 145, 253, 0.3),
+  blue-100: rgba(230, 241, 250, 1),
+  blue-150: rgba(154, 204, 237, 1),
+  blue-200: rgba(189, 219, 239, 1),
+  green: rgba(98, 180, 53, 1),
+  green-01: rgba(98, 154, 62, 1),
+  green-02: rgba(98, 180, 53, 1),
+  green-light: rgba(224, 240, 215, 1),
+  green-darker: rgba(52, 128, 10, 1),
+  green-50: rgba(98, 180, 53, 0.5),
+  green-40: rgba(98, 180, 53, 0.4),
+  green-30: rgba(98, 180, 53, 0.3),
+  green-20: rgba(98, 180, 53, 0.2),
+  green-10: rgba(98, 180, 53, 0.1),
+  green-100: rgba(85, 164, 41, 1),
+  green-150: rgba(177, 218, 154, 1),
+  green-neon: rgba(132, 196, 78, 1),
+  yellow: rgba(255, 197, 4, 1),
+  yellow-hover: rgba(255, 203, 29, 1),
+  yellow-active: rgba(230, 178, 4, 1),
+  yellow-focus: rgba(204, 158, 3, 1),
+  yellow-50: rgba(255, 197, 4, 0.5),
+  yellow-30: rgba(255, 197, 4, 0.3),
+  yellow-20: rgba(255, 197, 4, 0.2),
+  yellow-10: rgba(255, 197, 4, 0.1),
+  orange: rgba(245, 166, 35, 1),
+  orange-10: rgba(245, 166, 35, 0.1),
+  orange-20: rgba(249, 186, 83, 1),
+  orange-30: rgba(245, 166, 35, 0.3),
+  orange-150: rgba(250, 211, 145, 1),
+  beige: rgba(250, 248, 237, 1),
+  purple: rgba(130, 77, 178, 1),
+  purple-10: rgba(130, 77, 178, 0.1),
+  purple-20: rgba(94, 72, 162, 1),
+  pink: rgba(235, 144, 155, 1),
+  pink-10: rgba(235, 144, 155, 0.1),
+  violet-500: rgba(99, 52, 140, 1),
+  violet-neon: rgba(176, 128, 255, 1),
+  notification-warning: rgba(255, 252, 243, 1),
+  notification-warning-border: rgba(255, 234, 199, 1),
+  breadcrumbs-slash: rgba(161, 170, 178, 1),
+  label-green: rgba(23, 191, 180, 1),
+  label-green-invert: rgba(209, 242, 240, 1),
+  post-bonus-bg: rgba(247, 211, 27, 1),
+  post-bonus--arrow-bg: rgba(252, 96, 17, 1),
+  match-head: rgba(43, 46, 54, 1),
+  lilac: rgba(230, 216, 254, 1),
+  dark-gray-1: rgba(43, 46, 54, 1),
+);
+
+$gradients: (
+  gradient-blue: linear-gradient(to top, #6cd7ef, #4689b6),
+  gradient-orange: linear-gradient(to left, #ff4242, #f6bf6b),
+  gradient-green-black: linear-gradient(135deg, #62b435 0%, #62b435 50%, #333333 50%, #333333 100%),
+  gradient-red-black: linear-gradient(135deg, #f64747 0%, #f64747 50%, #333333 50%, #333333 100%),
+  gradient-grey-black: linear-gradient(135deg, #999999 0%, #999999 50%, #333333 50%, #333333 100%),
+  gradient-avatar: linear-gradient(135deg, #3023ae, #c86dd7),
+  gradient-purple-black: linear-gradient(#5e48a2, #2b2e36),
+);
+
+$pallette: map.merge($colors, $gradients);
+
+@each $color, $value in $colors {
+  .c-#{'' + $color} {
+    color: $value !important;
+  }
+}
+
+.bg-none {
+  background-color: transparent !important;
+}
+
+@each $color, $value in $colors {
+  .bg-#{'' + $color} {
+    background-color: $value !important;
+  }
+}
+
+@each $color, $value in $gradients {
+  .bgg-#{'' + $color} {
+    background: $value !important;
+  }
+}
+
+@function color($color) {
+  $result: map.get($colors, $color);
+
+  @if $result {
+    @return $result;
+  } @else {
+    @error "Color #{$color} is not specified";
+  }
+}

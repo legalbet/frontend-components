@@ -1,0 +1,12 @@
+@use './breakpoints' as *;
+@use './colors' as *;
+@mixin bonus-condition-link() {
+  &:hover {
+    color: color(red);
+  }
+  @media #{$xl} {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

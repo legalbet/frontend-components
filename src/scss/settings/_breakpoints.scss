@@ -1,0 +1,55 @@
+@use 'sass:map';
+/* prettier-ignore */
+$breakpoints: (
+  sm: 0,
+  xsm: 374px, // old $min-table-min
+  xxsm: 414px, // old $min-table
+  smd: 567px, // old $min-table-max
+  md: 744px, // old $tablet
+  lg: 984px, // old $tablet-album
+  xl: 1080px, // old $desktop
+  xsl: 1280px, // wide container
+  xxl: 1366px, // old $aside-shown
+  xxxl: 1566px, //1366-1565 - narrow container
+);
+
+/* prettier-ignore */
+$basic-breakpoints: (
+  sm: 0,
+  xxsm: map.get($breakpoints, 'xxsm'),
+  md: map.get($breakpoints, 'md'),
+  lg: map.get($breakpoints, 'lg'),
+  xl: map.get($breakpoints, 'xl'),
+  xsl: map.get($breakpoints, 'xsl'),
+  xxl: map.get($breakpoints, 'xxl'),
+  xxxl: map.get($breakpoints, 'xxxl'),
+);
+
+$xsm: '(min-width:' + map.get($breakpoints, 'xsm') + ')';
+$xxsm: '(min-width:' + map.get($breakpoints, 'xxsm') + ')';
+$smd: '(min-width:' + map.get($breakpoints, 'smd') + ')';
+$md: '(min-width:' + map.get($breakpoints, 'md') + ')';
+$lg: '(min-width:' + map.get($breakpoints, 'lg') + ')';
+$xl: '(min-width:' + map.get($breakpoints, 'xl') + ')';
+$xsl: '(min-width:' + map.get($breakpoints, 'xsl') + ')';
+$xxl: '(min-width:' + map.get($breakpoints, 'xxl') + ')';
+$xxxl: '(min-width:' + map.get($breakpoints, 'xxxl') + ')';
+
+$xsm_max: '(max-width:' + (map.get($breakpoints, 'xsm') - 1px) + ')';
+$xxsm_max: '(max-width:' + (map.get($breakpoints, 'xxsm') - 1px) + ')';
+$smd_max: '(max-width:' + (map.get($breakpoints, 'smd') - 1px) + ')';
+$md_max: '(max-width:' + (map.get($breakpoints, 'md') - 1px) + ')';
+$lg_max: '(max-width:' + (map.get($breakpoints, 'lg') - 1px) + ')';
+$xl_max: '(max-width:' + (map.get($breakpoints, 'xl') - 1px) + ')';
+$xsl_max: '(max-width:' + (map.get($breakpoints, 'xsl') - 1px) + ')';
+$xxl_max: '(max-width:' + (map.get($breakpoints, 'xxl') - 1px) + ')';
+$xxxl_max: '(max-width:' + (map.get($breakpoints, 'xxxl') - 1px) + ')';
+
+@function breakpoint-min($name, $breakpoints: $breakpoints) {
+  $min: map.get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
+}

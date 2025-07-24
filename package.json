@@ -1,7 +1,7 @@
 {
   "name": "@legalbet/frontend-components",
   "private": false,
-  "version": "0.1.15",
+  "version": "0.1.16",
   "type": "module",
   "module": "./dist/frontend-components.es.js",
   "types": "./dist/index.d.ts",
@@ -9,6 +9,9 @@
     ".": {
       "import": "./dist/frontend-components.es.js",
       "types": "./dist/index.d.ts"
+    },
+    "./frontend-components.css": {
+      "default": "./dist/frontend-components.css"
     }
   },
   "files": [

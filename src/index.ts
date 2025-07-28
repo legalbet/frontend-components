@@ -2,3 +2,5 @@ export { useFormWithValidation } from './composables/formValidation/useFormWithV
 
 export { default as BaseButton } from './components/button/BaseButton.vue';
 export { ButtonType } from './components/button/ButtonTypes';
+
+export { default as BaseIcon } from './components/icon/BaseIcon.vue';

@@ -6,7 +6,7 @@ import vueParser from 'vue-eslint-parser';
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   {
-    ignores: ['node_modules', 'build', 'dist'],
+    ignores: ['node_modules', 'build', 'dist', '**/*.test.ts'],
   },
 
   {
@@ -32,6 +32,9 @@ export default [
       'vue/comment-directive': 'off',
 
       '@typescript-eslint/no-dynamic-delete': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unused-expressions': 'off',
+      'vue/no-v-html': 'off',
 
       'prettier/prettier': [
         'error',

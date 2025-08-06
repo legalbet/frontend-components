@@ -21,7 +21,7 @@
     "access": "restricted"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite build --watch",
     "build": "pnpm clean && pnpm types && vite build",
     "types": "vue-tsc -p tsconfig.build.json",
     "clean": "rm -rf dist",

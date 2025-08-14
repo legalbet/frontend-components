@@ -124,9 +124,9 @@ export function useFormWithValidation<T extends Record<string, any>>(
 
   function validateForm(): boolean {
     let isFormValid = true;
-    //Нужно пройтись по всем и сделать setTouched, чтобы отразить ошибки, если сразу нижимаем отправить форму
+    //Нужно пройтись по всем и убрать фокус, чтобы отразить ошибки, если сразу нижимаем отправить форму
     fields.forEach(({ name }) => {
-      setInFocusValue(name, true);
+      setInFocusValue(name, false);
       const isFieldValid = validateField(name);
 
       if (isFormValid && !isFieldValid) {
@@ -143,7 +143,7 @@ export function useFormWithValidation<T extends Record<string, any>>(
 
   //TODO добавлять ошибки валидации с бэка, после сабмита
   function errorsToShow(field: keyof T) {
-    return form.isInFocus[field] ? form.errors[field] : [];
+    return !form.isInFocus[field] ? form.errors[field] : [];
   }
 
   async function sendForm(params: {

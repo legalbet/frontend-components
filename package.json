@@ -55,5 +55,8 @@
     "vue": "^3.5.17",
     "vue-eslint-parser": "^10.2.0",
     "vue-tsc": "^2.2.12"
+  },
+  "dependencies": {
+    "perfect-scrollbar": "^1.5.6"
   }
 }

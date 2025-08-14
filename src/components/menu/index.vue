@@ -25,10 +25,10 @@ import MenuDesktop from './Desktop.vue';
 import { MenuItemType } from './types';
 import MenuMobile from './Mobile.vue';
 
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, useAttrs, provide } from 'vue';
 import { headerScrollHandler, siteHeaderToTop } from './utils';
 import Logo from './Logo.vue';
-const currentGeo = ref('');
+import { TRANSLATION_KEY, ROUTE_KEY, type TranslationFunction, type RouteFunction } from '@/types/injection-keys';
 
 defineProps<{
   data: {
@@ -37,7 +37,13 @@ defineProps<{
     activeId?: string[];
   };
   adFox: string;
+  currentGeo: string;
 }>();
+
+const attrs = useAttrs();
+provide(TRANSLATION_KEY, (attrs?._ as TranslationFunction) ?? ((key: string) => key));
+provide(ROUTE_KEY, (attrs?.route as RouteFunction) ?? (() => ''));
+
 const isDarkTheme = ref(false);
 const isOpenMenu = ref(false);
 const isProfile = ref(false);
@@ -60,7 +66,6 @@ const closeMenu = () => {
 
 onMounted(() => {
   isDarkTheme.value = document.body.classList.contains('dark-theme-menu-flag');
-  currentGeo.value = ((window as any).userCountry ?? 'ru').toUpperCase();
   headerScrollHandler(isDarkTheme.value);
   document.addEventListener('scroll', () => {
     headerScrollHandler(isDarkTheme.value);

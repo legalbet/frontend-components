@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import { MenuItemType } from '../types';
 import { computed } from 'vue';
-import MobileItemContainer from './MenuMobileItemContainer.vue';
+import MobileItemContainer from './ItemContainer.vue';
 import { isMenuItemHidden, isVisibleMenuItem } from '../utils';
 
 const props = defineProps<{

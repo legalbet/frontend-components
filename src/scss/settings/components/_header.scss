@@ -1,6 +1,7 @@
-/*Site Header*/
-@use '@/scss/settings' as *;
-// @use '@/scss/components/_red-indicator';
+@use '../breakpoints' as *;
+@use '../colors' as *;
+@use '../variables' as *;
+@use '../utils' as *;
 .site-header {
   position: relative;
   top: 0;
@@ -327,6 +328,7 @@
     border-radius: rem(26px);
     background: color(red);
     white-space: nowrap;
+    color: color(white);
     @media #{$lg} {
       margin-left: rem(24px);
       margin-right: 0;
@@ -2872,8 +2874,7 @@
     margin: 0 14px;
     position: relative;
     .mobile-aside_new__form-label {
-      background: url('~@img/icons-menu/menu-search.svg') no-repeat center /
-        contain;
+      background: url('@/assets/img/menu-search.svg') no-repeat center / contain;
       width: 14px;
       height: 14px;
       position: absolute;

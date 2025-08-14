@@ -63,5 +63,5 @@ export interface MenuItemProfile {
   icon: string;
   route: RouteName;
   label: Lang;
-  params?: { [key: string]: string | number };
+  params?: { [key: string]: string | number | undefined };
 }

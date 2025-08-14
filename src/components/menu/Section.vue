@@ -60,9 +60,7 @@
 import { MenuIconPool, MenuItemType } from './types';
 import { isMenuItemHidden, isVisibleMenuItem } from './utils';
 import { computed } from 'vue';
-const _ = (e: string) => {
-  return e;
-};
+
 const props = defineProps<{
   sectionItem: MenuItemType;
   activeMenuItemId?: string | null;

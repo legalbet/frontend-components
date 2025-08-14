@@ -20,6 +20,7 @@
 <script setup lang="ts">
 import { Lang } from '@/types/Lang';
 import { User } from '@/types/User';
+
 defineProps<{
   isMenuOpen: boolean;
   user?: User;

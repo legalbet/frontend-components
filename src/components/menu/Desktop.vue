@@ -18,22 +18,22 @@
             <span v-if="menuItem.title === _(Lang.Daily)" class="red-indicator"></span>
           </a>
           <SubMenu
-            :go-back-to-previous-menu="goBackToPreviousMenu"
-            :menu-item="menuItem"
-            :show-sub-menu-id="showSubMenuId"
-            :sub-menu="subMenu"
-            :sub-menu-title="subMenuTitle"
-            :active-menu-item-id="activeMenuItemId"
-            :menu-hover="menuHoverHandler"
-            :menu-click="menuClickHandler"
-            :is-show-additional-sub-menu="isShowAdditionalSubMenu"
-            :menu-position="menuPosition"
-            :sub-menu-main-level-length="subMenuMainLevelLength"
-            :sub-menu-additional-level-length="subMenuAdditionalLevelLength"
-            :current-geo="currentGeo"
-            :active-id="activeId"
-            :sub-menu-max-height="subMenuMaxHeight"
-            :sub-menu-height="subMenuHeight"
+            :goBackToPreviousMenu="goBackToPreviousMenu"
+            :menuItem="menuItem"
+            :showSubMenuId="showSubMenuId"
+            :subMenu="subMenu"
+            :subMenuTitle="subMenuTitle"
+            :activeMenuItemId="activeMenuItemId"
+            :menuHover="menuHoverHandler"
+            :menuClick="menuClickHandler"
+            :isShowAdditionalSubMenu="isShowAdditionalSubMenu"
+            :menuPosition="menuPosition"
+            :subMenuMainLevelLength="subMenuMainLevelLength"
+            :subMenuAdditionalLevelLength="subMenuAdditionalLevelLength"
+            :currentGeo="currentGeo"
+            :activeId="activeId"
+            :subMenuMaxHeight="subMenuMaxHeight"
+            :subMenuHeight="subMenuHeight"
           />
         </li>
         <li
@@ -47,22 +47,22 @@
         >
           <a class="menu-desktop__link">{{ menuItem.title }}</a>
           <SubMenu
-            :go-back-to-previous-menu="goBackToPreviousMenu"
-            :menu-item="menuItem"
-            :show-sub-menu-id="showSubMenuId"
-            :sub-menu="subMenu"
-            :sub-menu-title="subMenuTitle"
-            :active-menu-item-id="activeMenuItemId"
-            :menu-hover="menuHoverHandler"
-            :menu-click="menuClickHandler"
-            :is-show-additional-sub-menu="isShowAdditionalSubMenu"
-            :menu-position="menuPosition"
-            :sub-menu-main-level-length="subMenuMainLevelLength"
-            :sub-menu-additional-level-length="subMenuAdditionalLevelLength"
-            :current-geo="currentGeo"
-            :active-id="activeId"
-            :sub-menu-max-height="subMenuMaxHeight"
-            :sub-menu-height="subMenuHeight"
+            :goBackToPreviousMenu="goBackToPreviousMenu"
+            :menuItem="menuItem"
+            :showSubMenuId="showSubMenuId"
+            :subMenu="subMenu"
+            :subMenuTitle="subMenuTitle"
+            :activeMenuItemId="activeMenuItemId"
+            :menuHover="menuHoverHandler"
+            :menuClick="menuClickHandler"
+            :isShowAdditionalSubMenu="isShowAdditionalSubMenu"
+            :menuPosition="menuPosition"
+            :subMenuMainLevelLength="subMenuMainLevelLength"
+            :subMenuAdditionalLevelLength="subMenuAdditionalLevelLength"
+            :currentGeo="currentGeo"
+            :activeId="activeId"
+            :subMenuMaxHeight="subMenuMaxHeight"
+            :subMenuHeight="subMenuHeight"
           />
         </li>
       </ul>
@@ -71,14 +71,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, ref, onMounted } from 'vue';
+import { computed, nextTick, ref, onMounted, inject } from 'vue';
 import { MenuItemType } from './types';
 import SubMenu from './SubMenu.vue';
 import { isMenuItemHidden, isVisibleMenuItem } from './utils';
-import { Lang } from '../../types/Lang';
-const _ = (e: string) => {
-  return e;
-};
+import { Lang } from '@/types/Lang';
+import { TRANSLATION_KEY } from '@/types/injection-keys';
+
+const _ = inject(TRANSLATION_KEY, (key: string) => key);
 
 const props = defineProps<{
   menu: MenuItemType[];
@@ -98,13 +98,14 @@ const subMenuAdditionalLevelLength = ref<number>(0);
 const subMenuMaxHeight = ref('');
 const subMenuHeight = ref('');
 const MENU_ITEM_GAP = 16;
-let hideSubMenuTimeout: number;
+let hideSubMenuTimeout: ReturnType<typeof setTimeout> | undefined;
 const activeId = ref<string[] | null>(null);
 const firstLevelItems = computed(() => props.menu[0].children.filter((i) => isVisibleMenuItem(i, props.currentGeo)));
 
 onMounted(() => {
   activeId.value = getActiveMenuItem(props.menu, window.location.pathname);
 });
+
 function findAdditionalSubMenu(menuItems: MenuItemType[]) {
   return (isShowAdditionalSubMenu.value = menuItems.some((section) =>
     section.children.some(
@@ -141,7 +142,6 @@ async function showSubMenuHandler(menuItem: MenuItemType) {
   if (showSubMenuId.value === menuItem.id) return;
 
   hideSubMenuHandler();
-
   if (!menuItem) return;
 
   showSubMenuId.value = menuItem.id;
@@ -188,7 +188,7 @@ async function showSubMenuHandler(menuItem: MenuItemType) {
   const subMenus = menuItemElement.querySelectorAll('.menu-desktop__sub-menu') as NodeListOf<HTMLElement>;
   const menuItems = subMenus[0].querySelectorAll('.menu-desktop__sub-menu-item') as NodeListOf<HTMLElement>;
   const menuSections = subMenus[0].querySelectorAll('li.menu-desktop__section') as NodeListOf<HTMLElement>;
-  const headerHeight = (document.querySelector('.site-header') as HTMLElement)?.offsetHeight;
+  const headerHeight = (document.querySelector('.site-header') as HTMLElement)?.offsetHeight || 0;
   const { paddingTop, paddingBottom } = window.getComputedStyle(subMenus[0]);
 
   const totalSubMenuPadding = parseFloat(paddingTop) + parseFloat(paddingBottom);
@@ -221,11 +221,12 @@ function calcTotalHeight(items: NodeListOf<HTMLElement>, limit?: number, totalPa
   const slicedItems = limit ? arr.slice(0, limit) : arr;
 
   return slicedItems.reduce((height, item) => {
-    const style = window.getComputedStyle(item);
+    const style = getComputedStyle(item);
     if (style.display === 'none') return height;
     return height + item.offsetHeight + MENU_ITEM_GAP;
   }, totalPadding);
 }
+
 function hideSubMenuHandler() {
   showSubMenuId.value = null;
   subMenu.value = null;
@@ -234,14 +235,15 @@ function hideSubMenuHandler() {
 }
 
 function hideSubMenuWithTimeout() {
-  hideSubMenuTimeout = window.setTimeout(() => {
+  hideSubMenuTimeout = setTimeout(() => {
     hideSubMenuHandler();
   }, 250);
 }
 
 function goBackToPreviousMenu() {
   if (menuHistory.value.length && subMenu.value) {
-    subMenu.value = menuHistory.value.pop() || null;
+    const poppedMenu = menuHistory.value.pop();
+    subMenu.value = poppedMenu || null;
     subMenuTitle.value = subMenu.value?.level === subMenuLimit.value ? subMenu.value.title : '';
   } else {
     subMenu.value = null;
@@ -269,7 +271,7 @@ function menuClickHandler(menuItem: MenuItemType) {
     subMenuTitle.value = '';
   }
   if (subMenu.value) {
-    if (subMenu.value) menuHistory.value.push(subMenu.value);
+    menuHistory.value.push(subMenu.value);
   }
 
   if (menuItem.children.length) {

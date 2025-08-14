@@ -46,11 +46,11 @@
 </template>
 
 <script setup lang="ts">
-import MenuSection from './MenuSection.vue';
+import MenuSection from './Section.vue';
 import { MenuItemType } from './types';
 import { computed, onMounted, ref } from 'vue';
 import { isMenuItemHidden } from './utils';
-// import { usePerfectScrollbar } from '../../../../composables/usePerfectScrollbar';
+import { usePerfectScrollbar } from '@/composables/usePerfectScrollbar';
 const props = defineProps<{
   menuItem: MenuItemType;
   showSubMenuId?: string | null;
@@ -77,8 +77,8 @@ const isMainContainerVisible = computed(
 const perfectScrollBarElementSub = ref<HTMLElement | null>(null);
 const isSubContainerVisible = computed(() => props.showSubMenuId == props.menuItem.id && props.isShowAdditionalSubMenu);
 
-// onMounted(() => {
-//   usePerfectScrollbar(perfectScrollBarElementMain, isMainContainerVisible);
-//   usePerfectScrollbar(perfectScrollBarElementSub, isSubContainerVisible);
-// });
+onMounted(() => {
+  usePerfectScrollbar(perfectScrollBarElementMain, isMainContainerVisible);
+  usePerfectScrollbar(perfectScrollBarElementSub, isSubContainerVisible);
+});
 </script>

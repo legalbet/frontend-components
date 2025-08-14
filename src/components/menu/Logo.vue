@@ -12,9 +12,9 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { LegalEvent } from '@/types/LegalEvents';
-// Temporary placeholders for logo imports
-const Logo = '';
-const LogoWhite = '';
+
+import Logo from '@/assets/img/legalbet-logo.svg';
+import LogoWhite from '@/assets/img/legalbet-logo-white.svg';
 import { Locale } from '@/types/Locale';
 import { Lang } from '@/types/Lang';
 
@@ -24,6 +24,7 @@ const props = defineProps<{
   isMenuOpen?: boolean;
   isOpenProfile?: boolean;
 }>();
+
 const scrollMenu = ref(false);
 const isDarkText = computed(() => props.darkTextTheme);
 const isDarkBgWhenScroll = ref(false);

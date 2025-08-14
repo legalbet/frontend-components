@@ -6,7 +6,7 @@
         class="mobile-search__form-input"
         name="search_query"
         type="text"
-        :placeholder="_(Lang.Search)"
+        :placeholder="Lang.Search"
         id="form-input"
       />
     </form>
@@ -15,7 +15,6 @@
 
 <script setup lang="ts">
 import { Lang } from '@/types/Lang';
-const _ = (e: string) => e;
 </script>
 
 <style lang="scss" scoped>
@@ -38,7 +37,7 @@ const _ = (e: string) => e;
     position: relative;
   }
   &__form-label {
-    background: url('~@img/icons-menu/menu-search.svg') no-repeat center / contain;
+    background: url('@/assets/img/menu-search.svg') no-repeat center / contain;
     width: rem(24px);
     height: rem(24px);
     position: absolute;
@@ -48,6 +47,7 @@ const _ = (e: string) => e;
   }
 
   &__form-input {
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;

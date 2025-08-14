@@ -1,12 +1,10 @@
 <template>
-  <component
-    v-if="menuMobileControlPanelComponent"
-    :is="menuMobileControlPanelComponent"
+  <MenuMobileControlPanel
     :user="user"
-    :close-menu="closeMenu"
-    :open-menu="openMenu"
-    :open-profile="openProfile"
-    :is-menu-open="isMenuOpen"
+    :closeMenu="closeMenu"
+    :openMenu="openMenu"
+    :openProfile="openProfile"
+    :isMenuOpen="isMenuOpen"
   />
   <div v-show="isMenuOpen" class="menu-mobile-container">
     <nav class="menu-mobile-content">
@@ -24,16 +22,17 @@
             {{ menuTitle }}
           </div>
         </li>
-        <component v-if="isProfile && menuProfileComponent" :is="menuProfileComponent" :user="user" />
-        <MenuMobileItem
-          v-else
-          v-for="menuItem in currentMenu"
-          :menu-item="menuItem"
-          :key="menuItem.id"
-          :open-items="openItems"
-          :current-geo="currentGeo"
-          @menu-click="setSubMenu"
-        />
+        <MenuProfile v-if="isProfile" :user="user" />
+        <template v-else>
+          <MenuMobileItem
+            v-for="menuItem in currentMenu"
+            :menuItem="menuItem"
+            :key="menuItem.id"
+            :openItems="openItems"
+            :currentGeo="currentGeo"
+            @menuClick="setSubMenu"
+          />
+        </template>
       </ul>
       <MenuMobileSearch />
     </nav>
@@ -42,25 +41,17 @@
 
 <script setup lang="ts">
 import { MenuItemType, User } from './types';
-import MenuMobileItem from './Mobile/MenuMobileItem.vue';
-import {
-  computed,
-  defineComponent,
-  onBeforeMount,
-  onBeforeUnmount,
-  onMounted,
-  ref,
-  shallowRef,
-  watch,
-  watchEffect,
-} from 'vue';
-import MenuMobileSearch from './Mobile/MenuMobileSearch.vue';
+import MenuMobileItem from './Mobile/Item.vue';
+import MenuMobileControlPanel from './Mobile/ControlPanel.vue';
+import MenuProfile from './Profile.vue';
+import { computed, onBeforeMount, onBeforeUnmount, onMounted, ref, watch, watchEffect } from 'vue';
+import MenuMobileSearch from './Mobile/Search.vue';
 import { isVisibleMenuItem } from './utils';
 
 const props = defineProps<{
   menu: MenuItemType[];
   isMenuOpen: boolean;
-  adFox: string;
+  adFox?: string;
   isProfile: boolean;
   currentGeo: string;
   closeMenu: () => void;
@@ -68,8 +59,6 @@ const props = defineProps<{
   openProfile: () => void;
 }>();
 
-const menuMobileControlPanelComponent = shallowRef<ReturnType<typeof defineComponent> | null>(null);
-const menuProfileComponent = shallowRef<ReturnType<typeof defineComponent> | null>(null);
 const currentMenu = ref<MenuItemType[]>([...props.menu[0]?.children]);
 const menuHistory = ref<MenuItemType[][]>([]);
 const menuTitleHistory = ref<string[]>([]);
@@ -93,9 +82,6 @@ watchEffect(() => {
 });
 
 onMounted(async () => {
-  menuMobileControlPanelComponent.value = (await import('./Mobile/MenuMobileControlPanel.vue')).default;
-  menuProfileComponent.value = (await import('./Mobile/MenuProfile.vue')).default;
-
   watch(
     () => props.isMenuOpen,
     (val) => {
@@ -157,9 +143,7 @@ function setAllMenu(): MenuItemType[] {
         props.menu[1]?.children?.flatMap((section) => section?.children?.flatMap((menu) => menu?.children)) || [];
     }
   }
-
   currentMenu.value = [...firstMenuItems, ...secondMenuItems];
-
   return currentMenu.value;
 }
 </script>

@@ -1,8 +1,6 @@
 export { useFormWithValidation } from './composables/formValidation/useFormWithValidation.ts';
-
 export { default as BaseButton } from './components/button/BaseButton.vue';
 export { ButtonType } from './components/button/ButtonTypes';
-
 export { default as BaseIcon } from './components/icon/BaseIcon.vue';
-
 export { default as BaseCheckbox } from './components/checkbox/BaseCheckbox.vue';
+export { default as Menu } from './components/menu/index.vue';

@@ -1,5 +1,6 @@
 import { MenuItemType } from './types';
 import { LegalEvent } from '../../types/LegalEvents';
+import { RouteName } from '../../types/RouteName';
 
 export function headerScrollHandler(darkTextTheme: boolean | null) {
   const elementsOverHeader = document.querySelectorAll('.over-header-js');
@@ -89,3 +90,27 @@ export const siteHeaderToTop = (isOpenMenu: boolean) => {
     }
   });
 };
+
+export function route(name: RouteName, params?: Record<string, string | number | boolean>): string {
+  if (!window.routes) {
+    throw new Error('"route" function available only after routes loading!');
+  }
+  if (!window.routes[name]) {
+    throw new Error('Unknown route name "' + name + '"');
+  }
+  let routeName = window.routes[name],
+    getParams = '';
+  if (params) {
+    for (const param in params) {
+      if (params[param]) {
+        const temp = routeName.replace('{' + param + '}', params[param].toString());
+        if (temp == routeName) {
+          getParams += (getParams != '' ? '&' : '') + param + '=' + params[param].toString();
+        } else {
+          routeName = temp;
+        }
+      }
+    }
+  }
+  return routeName + (getParams != '' ? '?' + getParams : '');
+}

@@ -24,10 +24,9 @@
 
 <script setup lang="ts">
 import { inject } from 'vue';
-import { TRANSLATION_KEY, ROUTE_KEY } from '@/types/injection-keys';
-
+import { TRANSLATION_KEY } from '@/types/injection-keys';
+import { route } from '@/components/menu/utils';
 const _ = inject(TRANSLATION_KEY, (key: string) => key);
-const route = inject(ROUTE_KEY, () => '');
 </script>
 
 <style scoped></style>

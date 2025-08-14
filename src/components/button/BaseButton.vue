@@ -23,6 +23,7 @@ const buttonStyles = computed(() => ({
   '--height': typeof props.height === 'number' ? `${props.height}px` : props.height,
   '--width': typeof props.width === 'number' ? `${props.width}px` : props.width,
 }));
+console.error(buttonStyles.value);
 </script>
 
 <style lang="scss" scoped>

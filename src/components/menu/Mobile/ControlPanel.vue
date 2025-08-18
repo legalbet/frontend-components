@@ -2,12 +2,18 @@
   <div class="burger-menu-button mobile-only">
     <div v-if="user" class="user-block" @click.stop="openProfile">
       <span id="mobile-profile-menu-user" class="user img-box">
-        <img alt="user" v-if="user.avatar" class="account__curcle-pic" style="border-radius: 50%" />
+        <img
+          alt="user"
+          v-if="user.avatar"
+          class="account__curcle-pic"
+          style="border-radius: 50%"
+          :src="asset(user.avatar)"
+        />
 
         <span v-else-if="user.username">{{ user.username.slice(0, 2).toUpperCase() }}</span>
       </span>
     </div>
-    <a v-else class="signin button" href="#_login">{{ Lang.Login }}</a>
+    <a v-else class="signin button" href="#_login">{{ _(Lang.Login) }}</a>
     <div
       :class="['icon', isMenuOpen ? 'icon-close' : 'icon-hamburger']"
       @click="openMenu"
@@ -20,6 +26,10 @@
 <script setup lang="ts">
 import { Lang } from '@/types/Lang';
 import { User } from '@/types/User';
+import { asset } from '../utils';
+import { inject } from 'vue';
+import { TRANSLATION_KEY } from '@/types/injection-keys';
+const _ = inject(TRANSLATION_KEY, (key: string) => key);
 
 defineProps<{
   isMenuOpen: boolean;

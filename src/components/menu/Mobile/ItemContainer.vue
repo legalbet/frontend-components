@@ -4,24 +4,7 @@
       v-if="menuItem.icon && menuItem.iconPool === MenuIconPool.generalIconPool"
       :class="`icon icon-${menuItem.icon} menu-icon`"
     ></span>
-    <img
-      class="img-icon"
-      v-if="menuItem.icon && menuItem.iconPool === MenuIconPool.bkIconPool"
-      :src="menuItem.icon"
-      :alt="menuItem.title"
-    />
-    <img
-      class="img-icon"
-      v-if="menuItem.icon && menuItem.iconPool === MenuIconPool.casinoIconPool"
-      :src="menuItem.icon"
-      :alt="menuItem.title"
-    />
-    <img
-      class="img-icon-tournament"
-      v-if="menuItem.icon && menuItem.iconPool === MenuIconPool.tournamentsIconPool"
-      :src="menuItem.icon"
-      :alt="menuItem.icon"
-    />
+    <img v-if="isImagePool" :class="imgClass" :src="asset(menuItem.icon)" :alt="imgAlt" />
     <a
       :class="['menu-mobile__link', { 'menu-mobile__link--flex': menuItem.title === Lang.Daily }]"
       :style="hasAnyIcon && !menuItem.icon ? 'margin-left: 38px' : ''"
@@ -39,12 +22,31 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { MenuIconPool, MenuItemType } from '../types';
 import { Lang } from '@/types/Lang';
-defineProps<{
+import { asset } from '../utils';
+const { menuItem, hasAnyIcon } = defineProps<{
   menuItem: MenuItemType;
   hasAnyIcon?: boolean;
 }>();
+
+const isImagePool = computed(() =>
+  Boolean(
+    menuItem.icon &&
+      (menuItem.iconPool === MenuIconPool.bkIconPool ||
+        menuItem.iconPool === MenuIconPool.casinoIconPool ||
+        menuItem.iconPool === MenuIconPool.tournamentsIconPool)
+  )
+);
+
+const imgClass = computed(() =>
+  menuItem.iconPool === MenuIconPool.tournamentsIconPool ? 'img-icon-tournament' : 'img-icon'
+);
+
+const imgAlt = computed(() =>
+  menuItem.iconPool === MenuIconPool.tournamentsIconPool ? menuItem.icon : menuItem.title
+);
 
 const navigate = (menuItem: MenuItemType, event: Event) => {
   if (menuItem.children && menuItem.children.length) {

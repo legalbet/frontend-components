@@ -75,6 +75,8 @@ onMounted(() => {
 
 <style lang="scss">
 @use '@/scss/settings' as *;
+@use './menu.scss' as *;
+
 .main-menu-container {
   display: flex;
   align-items: center;

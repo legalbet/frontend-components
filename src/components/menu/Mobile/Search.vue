@@ -6,7 +6,7 @@
         class="mobile-search__form-input"
         name="search_query"
         type="text"
-        :placeholder="Lang.Search"
+        :placeholder="_(Lang.Search)"
         id="form-input"
       />
     </form>
@@ -15,6 +15,9 @@
 
 <script setup lang="ts">
 import { Lang } from '@/types/Lang';
+import { inject } from 'vue';
+import { TRANSLATION_KEY } from '@/types/injection-keys';
+const _ = inject(TRANSLATION_KEY, (key: string) => key);
 </script>
 
 <style lang="scss" scoped>

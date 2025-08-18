@@ -17,6 +17,9 @@ import Logo from '@/assets/img/legalbet-logo.svg';
 import LogoWhite from '@/assets/img/legalbet-logo-white.svg';
 import { Locale } from '@/types/Locale';
 import { Lang } from '@/types/Lang';
+import { inject } from 'vue';
+import { TRANSLATION_KEY } from '@/types/injection-keys';
+const _ = inject(TRANSLATION_KEY, (key: string) => key);
 
 const props = defineProps<{
   isNewYear?: boolean;
@@ -43,7 +46,7 @@ const setScrollMenu = (e: Event) => {
 
 onMounted(() => {
   if ((window as any).siteLocale === Locale.KZ) {
-    altText.value = Lang.ManinLogoAltText;
+    altText.value = _(Lang.ManinLogoAltText);
   }
   document.addEventListener(LegalEvent.ScrollNewMenuEvent, setScrollMenu);
 });

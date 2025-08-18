@@ -23,20 +23,10 @@
           :class="`icon icon-${menuSubItem.icon} menu-icon`"
         ></span>
         <img
-          class="img-icon"
-          v-if="menuSubItem.icon && menuSubItem.iconPool === MenuIconPool.bkIconPool"
-          :alt="menuSubItem.title"
-        />
-        <img
-          class="img-icon"
-          v-if="menuSubItem.icon && menuSubItem.iconPool === MenuIconPool.casinoIconPool"
-          :alt="menuSubItem.title"
-        />
-        <img
-          class="img-icon-tournament"
-          v-if="menuSubItem.icon && menuSubItem.iconPool === MenuIconPool.tournamentsIconPool"
-          :src="menuSubItem.icon"
-          :alt="menuSubItem.icon"
+          v-if="isImagePool(menuSubItem)"
+          :class="getImgClass(menuSubItem)"
+          :src="asset(menuSubItem.icon)"
+          :alt="getImgAlt(menuSubItem)"
         />
         <a
           :style="hasAnyIcon && !menuSubItem.icon ? 'margin-left: 40px' : ''"
@@ -60,6 +50,7 @@
 import { MenuIconPool, MenuItemType } from './types';
 import { isMenuItemHidden, isVisibleMenuItem } from './utils';
 import { computed } from 'vue';
+import { asset } from './utils';
 
 const props = defineProps<{
   sectionItem: MenuItemType;
@@ -96,4 +87,18 @@ const navigateTo = (menuItem: MenuItemType) => {
 };
 
 const hasAnyIcon = computed(() => props.sectionItem.children.some((item) => item.icon));
+
+// Image helpers for icon pools used in template
+const isImagePool = (item: MenuItemType) =>
+  Boolean(
+    item.icon &&
+      (item.iconPool === MenuIconPool.bkIconPool ||
+        item.iconPool === MenuIconPool.casinoIconPool ||
+        item.iconPool === MenuIconPool.tournamentsIconPool)
+  );
+
+const getImgClass = (item: MenuItemType) =>
+  item.iconPool === MenuIconPool.tournamentsIconPool ? 'img-icon-tournament' : 'img-icon';
+
+const getImgAlt = (item: MenuItemType) => (item.iconPool === MenuIconPool.tournamentsIconPool ? item.icon : item.title);
 </script>

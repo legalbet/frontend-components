@@ -1,7 +1,5 @@
-@use '../breakpoints' as *;
-@use '../colors' as *;
-@use '../variables' as *;
-@use '../utils' as *;
+@use '../../scss/settings' as *;
+
 .site-header {
   position: relative;
   top: 0;

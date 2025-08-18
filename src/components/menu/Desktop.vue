@@ -140,7 +140,6 @@ async function showSubMenuHandler(menuItem: MenuItemType) {
   clearTimeout(hideSubMenuTimeout);
   //При клике на MenuSection, срабатывает Mouseenter, нужно проверка, чтобы это обработать
   if (showSubMenuId.value === menuItem.id) return;
-
   hideSubMenuHandler();
   if (!menuItem) return;
 
@@ -198,8 +197,11 @@ async function showSubMenuHandler(menuItem: MenuItemType) {
 
   const totalHeightMaxLimit = calcTotalHeight(menuItems, 14, totalPadding);
   const totalHeightWithoutLimit = calcTotalHeight(menuItems, undefined, totalPadding);
+
   const allowedHeightByScreen = document.documentElement.clientHeight - headerHeight;
+  menuItems.length >= 14 ? totalHeightMaxLimit : totalHeightWithoutLimit;
   const preCalcHeight = menuItems.length >= 14 ? totalHeightMaxLimit : totalHeightWithoutLimit;
+
   subMenuMaxHeight.value = (preCalcHeight > allowedHeightByScreen ? allowedHeightByScreen : preCalcHeight) + 'px';
   subMenuHeight.value = subMenuMaxHeight.value + 'px';
   subMenuMainLevelLength.value = calcMainMenuLengthItems(menuItems);

@@ -1,4 +1,7 @@
-@use '../../scss/settings' as *;
+@use '../settings/breakpoints' as *;
+@use '../settings/colors' as *;
+@use '../settings/variables' as *;
+@use '../settings/utils' as *;
 
 .site-header {
   position: relative;
@@ -2986,4 +2989,39 @@
   div.adfox-mobile.fox {
     display: none;
   }
+}
+
+.main-menu-container {
+  display: flex;
+  align-items: center;
+
+  .signin.button {
+    padding: rem(5px) rem(12px) !important;
+    border-radius: rem(26px) !important;
+    background: color(red) !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+}
+
+.mobile-only {
+  display: flex !important;
+}
+
+.desktop-only {
+  display: none !important;
+}
+
+@media #{$lg} {
+  .mobile-only {
+    display: none !important;
+  }
+
+  .desktop-only {
+    display: flex !important;
+  }
+}
+.site-header.site-header-to-top {
+  position: absolute;
+  background: color(white);
 }

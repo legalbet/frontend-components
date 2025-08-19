@@ -709,10 +709,12 @@
 
     &::after {
       @include markElement;
-      position: absolute;
-      transform: translateY(-50%);
-      right: 0;
-      top: 50%;
+      & {
+        position: absolute;
+        transform: translateY(-50%);
+        right: 0;
+        top: 50%;
+      }
 
       @media #{$md} {
         display: inline-flex !important;
@@ -1304,7 +1306,7 @@
         width: 100%;
         border-bottom: 0;
         &_cancel {
-          background: url('~@img/menu-cancel.png') no-repeat center / contain;
+          background: url('@/assets/img/menu-cancel.png') no-repeat center / contain;
           position: absolute;
           top: 16px;
           right: 16px;
@@ -1410,6 +1412,8 @@
             }
 
             a {
+              white-space: initial;
+
               @media #{$lg_max} {
                 padding-left: 2.75rem !important;
               }
@@ -1419,8 +1423,6 @@
                   padding-left: 1.5rem !important;
                 }
               }
-
-              white-space: initial;
 
               &.icon .icon {
                 @media #{$lg} {

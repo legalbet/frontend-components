@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref } from 'vue';
-import { ScreenSize } from '@/ScreenSize';
+import { ScreenSize } from '@fc/ScreenSize';
 
 const wrapper = ref<HTMLElement | null>(null);
 const inner = ref<HTMLElement | null>(null);
@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .smooth-height-wrapper {
   overflow: hidden;
 }

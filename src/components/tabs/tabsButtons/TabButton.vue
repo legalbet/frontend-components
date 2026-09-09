@@ -54,10 +54,10 @@
 </template>
 
 <script setup lang="ts">
-import type { TabButtonItem } from '@/components/tabs/types';
-import { TabsVariant, TabsTheme } from '@/components/tabs/types';
-import { WebEvent } from '@/types/WebEvent';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
+import type { TabButtonItem } from '@fc/components/tabs/types';
+import { TabsVariant, TabsTheme } from '@fc/components/tabs/types';
+import { WebEvent } from '@fc/types/WebEvent';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
 
 const props = withDefaults(
   defineProps<{
@@ -84,7 +84,7 @@ function onClick() {
 </script>
 
 <style lang="scss" scoped>
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .tab {
   display: flex;
   align-items: center;

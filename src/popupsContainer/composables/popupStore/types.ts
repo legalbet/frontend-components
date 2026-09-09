@@ -10,8 +10,8 @@ import type {
   InvitePopupParams,
   DailyTaskAction,
   DailyTaskHistory,
-} from '@/types/external-types';
-import type { FilterProps } from '@/filter/types';
+} from '@fc/types/external-types';
+import type { FilterProps } from '@fc/filter/types';
 import type { ComputedRef, Ref } from 'vue';
 
 export interface PopupStore {

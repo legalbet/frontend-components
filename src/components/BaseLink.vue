@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { LinkColor, Size } from '@/components/types/BaseElementsType';
+import { LinkColor, Size } from '@fc/components/types/BaseElementsType';
 
 withDefaults(
   defineProps<{
@@ -65,7 +65,7 @@ withDefaults(
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-link {
   display: flex;
   align-items: center;

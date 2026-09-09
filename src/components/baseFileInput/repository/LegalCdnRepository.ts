@@ -1,4 +1,4 @@
-import type { $Fetch } from '@/types/nitropack';
+import type { $Fetch } from '@fc/types/nitropack';
 
 export type LegalCdnTokenResponse = {
   status?: string;

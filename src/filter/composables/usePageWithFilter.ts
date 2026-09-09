@@ -1,13 +1,13 @@
 import { computed } from 'vue';
-import { navigateTo } from '@/composables/useNuxtShims';
-import type { RouteNames } from '@/types/RoutesNames';
-import { useFilterDataLoader } from '@/filter/composables/useFilterDataLoader';
-import type { NitroFetchOptions } from '@/types/nitropack';
-import type { SelectedFilters } from '@/filter/types';
-import type { LocationQuery } from '@/types/vue-router';
-import { buildEncodedQueryFromRouteQuery } from '@/filter/utils';
-import { useFilterController } from '@/filter/composables/useFilterController';
-import { useConfigStore } from '@/composables/useConfigStore';
+import { navigateTo } from '@fc/composables/useNuxtShims';
+import type { RouteNames } from '@fc/types/RoutesNames';
+import { useFilterDataLoader } from '@fc/filter/composables/useFilterDataLoader';
+import type { NitroFetchOptions } from '@fc/types/nitropack';
+import type { SelectedFilters } from '@fc/filter/types';
+import type { LocationQuery } from '@fc/types/vue-router';
+import { buildEncodedQueryFromRouteQuery } from '@fc/filter/utils';
+import { useFilterController } from '@fc/filter/composables/useFilterController';
+import { useConfigStore } from '@fc/composables/useConfigStore';
 
 export async function usePageWithFilter<T>(params: {
   route: ReturnType<typeof useRoute>;

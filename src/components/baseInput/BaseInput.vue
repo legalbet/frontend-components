@@ -60,9 +60,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { IconNames } from '@/components/baseIcon/iconNames';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import { InputSizeType, InputType } from '@/components/baseInput/types';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import { InputSizeType, InputType } from '@fc/components/baseInput/types';
 
 withDefaults(
   defineProps<{
@@ -114,7 +114,7 @@ function handleChange(event: Event) {
 }
 </script>
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .input-box {
   position: relative;
   &--full-width {

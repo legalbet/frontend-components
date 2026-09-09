@@ -1,6 +1,6 @@
 import { ref, watch } from 'vue';
-import type { LocationQuery } from '@/types/vue-router';
-import { buildEncodedQueryFromRouteQuery } from '@/filter/utils';
+import type { LocationQuery } from '@fc/types/vue-router';
+import { buildEncodedQueryFromRouteQuery } from '@fc/filter/utils';
 
 export function useSorting<TSort extends string>(params: {
   route: ReturnType<typeof useRoute>;

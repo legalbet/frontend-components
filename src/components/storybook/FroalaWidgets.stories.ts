@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { onMounted, ref } from 'vue';
 
-import { NoteStyle, NoteType, NoteSize } from '@/components/baseNote/NoteTypes';
-import { SeoText } from '@/types/external-types';
-import { DynamicDataType, StaticBlockNames, useDynamicData } from '@/types/external-types';
-import { useConfigStore } from '@/composables/useConfigStore';
+import { NoteStyle, NoteType, NoteSize } from '@fc/components/baseNote/NoteTypes';
+import { SeoText } from '@fc/types/external-types';
+import { DynamicDataType, StaticBlockNames, useDynamicData } from '@fc/types/external-types';
+import { useConfigStore } from '@fc/composables/useConfigStore';
 export default {
   title: 'Features/Elements/FroalaWidgets',
   tags: ['autodocs'],

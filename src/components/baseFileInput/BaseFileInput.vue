@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { toRefs } from 'vue';
 
-import { useBaseFileInput } from '@/components/baseFileInput/composables/useBaseFileInput';
+import { useBaseFileInput } from '@fc/components/baseFileInput/composables/useBaseFileInput';
 
 type ModelValue = File | File[] | null;
 

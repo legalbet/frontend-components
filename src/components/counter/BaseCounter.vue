@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Color, Size } from '@/components/types/BaseElementsType';
+import type { Color, Size } from '@fc/components/types/BaseElementsType';
 
 defineProps<{
   size: Size;
@@ -15,7 +15,7 @@ defineProps<{
   </div>
 </template>
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-counter {
   width: fit-content;
   justify-content: center;

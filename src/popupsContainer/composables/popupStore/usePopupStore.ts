@@ -1,6 +1,6 @@
-import { useState, useRoute } from '@/composables/useNuxtShims';
+import { useState, useRoute } from '@fc/composables/useNuxtShims';
 import { computed, watch } from 'vue';
-import type { PopupStore, PopupName, PopupParams } from '@/popupsContainer/composables/popupStore/types';
+import type { PopupStore, PopupName, PopupParams } from '@fc/popupsContainer/composables/popupStore/types';
 export function usePopupStore() {
   const popupStore = useState<PopupStore>('popup-store', () => ({
     activePopup: { popupName: null, params: null },

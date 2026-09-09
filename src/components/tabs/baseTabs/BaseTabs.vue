@@ -28,11 +28,11 @@
 </template>
 
 <script setup lang="ts">
-import type { TabItem } from '@/components/tabs/types';
-import { TabsVariant, TabsTheme } from '@/components/tabs/types';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import TabsButtons from '@/components/tabs/tabsButtons/TabsButtons.vue';
-import { Color } from '@/components/types/BaseElementsType';
+import type { TabItem } from '@fc/components/tabs/types';
+import { TabsVariant, TabsTheme } from '@fc/components/tabs/types';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import TabsButtons from '@fc/components/tabs/tabsButtons/TabsButtons.vue';
+import { Color } from '@fc/components/types/BaseElementsType';
 
 withDefaults(
   defineProps<{

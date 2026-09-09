@@ -8,11 +8,11 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { Color, Size } from '@/components/types/BaseElementsType';
+import { Color, Size } from '@fc/components/types/BaseElementsType';
 import BaseCounter from '../../counter/BaseCounter.vue';
 import TabButton from './TabButton.vue';
-import type { TabButtonItem } from '@/components/tabs/types';
-import { TabsTheme } from '@/components/tabs/types';
+import type { TabButtonItem } from '@fc/components/tabs/types';
+import { TabsTheme } from '@fc/components/tabs/types';
 
 const props = withDefaults(
   defineProps<{

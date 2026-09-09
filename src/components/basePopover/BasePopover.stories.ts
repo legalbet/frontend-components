@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref } from 'vue';
 
-import BasePopover from '@/components/basePopover/BasePopover.vue';
-import BaseButton from '@/components/baseButton/BaseButton.vue';
-import { ButtonColor, ButtonShape, ButtonVariant } from '@/components/baseButton/types';
-import { Size } from '@/components/types/BaseElementsType';
+import BasePopover from '@fc/components/basePopover/BasePopover.vue';
+import BaseButton from '@fc/components/baseButton/BaseButton.vue';
+import { ButtonColor, ButtonShape, ButtonVariant } from '@fc/components/baseButton/types';
+import { Size } from '@fc/components/types/BaseElementsType';
 
 const meta = {
   title: 'UI/Popover',

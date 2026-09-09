@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref computed watch onMounted nextTick } from 'vue';
-import BaseEmojiPicker from '@/components/baseImojiPicker/BaseEmojiPicker.vue';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import { IconNames } from '@/components/baseIcon/iconNames';
+import BaseEmojiPicker from '@fc/components/baseImojiPicker/BaseEmojiPicker.vue';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
 interface Props {
   label?: string;
   placeholder?: string;
@@ -169,7 +169,7 @@ watch(model, adjustHeight);
 </template>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .input-box__container {
   position: relative;
 

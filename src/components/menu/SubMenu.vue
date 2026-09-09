@@ -50,7 +50,7 @@ import MenuSection from './Section.vue';
 import { MenuItemType } from './types';
 import { computed, onMounted, ref } from 'vue';
 import { isMenuItemHidden } from './utils';
-import { usePerfectScrollbar } from '@/usePerfectScrollbar';
+import { usePerfectScrollbar } from '@fc/usePerfectScrollbar';
 const props = defineProps<{
   menuItem: MenuItemType;
   showSubMenuId?: string | null;

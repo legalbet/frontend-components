@@ -1,4 +1,4 @@
-import type { IconNames } from '@/components/baseIcon/iconNames';
+import type { IconNames } from '@fc/components/baseIcon/iconNames';
 
 export interface IconParams {
   tagName?: string;

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { computed } from 'vue';
 
-import BaseButton from '@/components/baseButton/BaseButton.vue';
-import { ButtonColor, ButtonShape, ButtonTag, ButtonVariant } from '@/components/baseButton/types';
-import { Size } from '@/components/types/BaseElementsType';
-import { IconNames } from '@/components/baseIcon/iconNames';
+import BaseButton from '@fc/components/baseButton/BaseButton.vue';
+import { ButtonColor, ButtonShape, ButtonTag, ButtonVariant } from '@fc/components/baseButton/types';
+import { Size } from '@fc/components/types/BaseElementsType';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
 
 type ExtraArgs = {
   label?: string;

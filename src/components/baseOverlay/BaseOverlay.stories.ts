@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref, watch } from 'vue';
 
-import BaseOverlay from '@/components/baseOverlay/BaseOverlay.vue';
+import BaseOverlay from '@fc/components/baseOverlay/BaseOverlay.vue';
 
 const meta: Meta = {
   title: 'UI/Overlay',

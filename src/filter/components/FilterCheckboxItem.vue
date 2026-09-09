@@ -32,9 +32,9 @@
 </template>
 
 <script setup lang="ts">
-import asset from '@/utils/asset';
-import BaseCheckbox from '@/components/baseCheckbox/BaseCheckbox.vue';
-import type { UiFilterItem } from '@/filter/types';
+import asset from '@fc/utils/asset';
+import BaseCheckbox from '@fc/components/baseCheckbox/BaseCheckbox.vue';
+import type { UiFilterItem } from '@fc/filter/types';
 
 defineProps<{
   filter: UiFilterItem;
@@ -50,7 +50,7 @@ function emitToggle(id: number, checked: boolean) {
 </script>
 
 <style scoped lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .filter-checkbox-item {
   display: flex;
   align-items: center;

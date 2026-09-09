@@ -70,7 +70,7 @@ function handleChange(event: Event) {
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .checkbox-container {
   display: flex;
   gap: rem(8px);

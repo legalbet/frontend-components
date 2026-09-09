@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { MenuIconPool, MenuItemType } from '../types';
-import { Lang } from '@/types/Lang';
+import { Lang } from '@fc/types/Lang';
 import { asset } from '../utils';
 const { menuItem, hasAnyIcon } = defineProps<{
   menuItem: MenuItemType;
@@ -56,7 +56,7 @@ const navigate = (menuItem: MenuItemType, event: Event) => {
 </script>
 
 <style lang="scss">
-@use '@/scss/settings' as *;
+@use '@fc/scss/settings' as *;
 
 .menu-item-container {
   display: flex;

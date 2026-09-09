@@ -67,7 +67,7 @@ const navigateTo = (menuItem: MenuItemType) => {
 </script>
 
 <style lang="scss">
-@use '@/scss/settings' as *;
+@use '@fc/scss/settings' as *;
 .menu-mobile {
   &__item,
   .submenu__item {

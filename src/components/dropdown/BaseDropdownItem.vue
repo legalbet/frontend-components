@@ -6,8 +6,8 @@
 </template>
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { IconPosition } from '@/components/types/BaseElementsType';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
+import { IconPosition } from '@fc/components/types/BaseElementsType';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
 
 const props = withDefaults(
   defineProps<{
@@ -34,7 +34,7 @@ const computedClasses = computed(() => ({
 }));
 </script>
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .dropdown__item {
   display: flex;
   align-items: center;

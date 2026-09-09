@@ -18,9 +18,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { NoteStyle, NoteType, NoteSize, NOTE_ICONS } from '@/components/baseNote/NoteTypes';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import type { IconNames } from '@/components/baseIcon/iconNames';
+import { NoteStyle, NoteType, NoteSize, NOTE_ICONS } from '@fc/components/baseNote/NoteTypes';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import type { IconNames } from '@fc/components/baseIcon/iconNames';
 
 const props = withDefaults(
   defineProps<{
@@ -46,7 +46,7 @@ const iconName = computed(() => props.customIconName ?? NOTE_ICONS[props.noteSty
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-note {
   display: flex;
   gap: rem(12px);

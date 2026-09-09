@@ -1,4 +1,4 @@
-import { IconNames } from '@/components/baseIcon/iconNames';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
 
 export enum NoteStyle {
   Positive = 'positive',

@@ -1,4 +1,4 @@
-import { SeoText } from '@/types/external-types';
+import { SeoText } from '@fc/types/external-types';
 export default {
   title: 'Features/Elements/FroalaText',
   tags: ['autodocs'],

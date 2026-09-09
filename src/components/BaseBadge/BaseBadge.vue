@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { AllColors } from '@/components/BaseBadge/types';
-import { BaseIcon } from '@/components/baseIcon';
-import { Size, Variant } from '@/components/types/BaseElementsType';
-import type { IconParams } from '@/components/baseIcon/types';
+import { AllColors } from '@fc/components/BaseBadge/types';
+import { BaseIcon } from '@fc/components/baseIcon';
+import { Size, Variant } from '@fc/components/types/BaseElementsType';
+import type { IconParams } from '@fc/components/baseIcon/types';
 
 const props = withDefaults(
   defineProps<{
@@ -71,7 +71,7 @@ const iconSize = computed(() => {
 </template>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-badge {
   border-radius: var(--radius-button-24, 4px);
   display: flex;

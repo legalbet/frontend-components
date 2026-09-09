@@ -1,8 +1,8 @@
 import { watch } from 'vue';
-import { debounce } from '@/utils/debounce';
-import { useFetchWithAbort } from '@/composables/useFetchWithAbort';
-import { useSsrFetch } from '@/composables/useSsrFetch';
-import type { SelectedFilters } from '@/filter/types';
+import { debounce } from '@fc/utils/debounce';
+import { useFetchWithAbort } from '@fc/composables/useFetchWithAbort';
+import { useSsrFetch } from '@fc/composables/useSsrFetch';
+import type { SelectedFilters } from '@fc/filter/types';
 export async function useFilterDataLoader<T>(options: {
   filters: Ref<SelectedFilters>;
   skipDataLoad?: Ref<boolean>;

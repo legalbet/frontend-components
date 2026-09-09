@@ -1,7 +1,7 @@
 import { computed, watch } from 'vue';
-import { useRoute } from '@/composables/useNuxtShims';
-import { parseSelectedFilters, selectedFiltersToQuery, toggleSelected } from '@/filter/utils';
-import type { SelectedFilters } from '@/filter/types';
+import { useRoute } from '@fc/composables/useNuxtShims';
+import { parseSelectedFilters, selectedFiltersToQuery, toggleSelected } from '@fc/filter/utils';
+import type { SelectedFilters } from '@fc/filter/types';
 
 /**
  * Controller = single source of truth for selected filters in UI.

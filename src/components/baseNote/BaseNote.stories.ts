@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import { NoteStyle, NoteType, NoteSize } from '@/components/baseNote/NoteTypes';
-import BaseNote from '@/components/baseNote/BaseNote.vue';
-import { IconNames } from '@/components/baseIcon/iconNames';
+import { NoteStyle, NoteType, NoteSize } from '@fc/components/baseNote/NoteTypes';
+import BaseNote from '@fc/components/baseNote/BaseNote.vue';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
 
 const meta = {
   title: 'UI/Note',

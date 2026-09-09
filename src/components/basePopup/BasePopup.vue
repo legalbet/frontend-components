@@ -67,14 +67,14 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { usePopupStore } from '@/popupsContainer/composables/popupStore/usePopupStore';
-import type { PopupName } from '@/popupsContainer/composables/popupStore/types';
-// import useVisualViewportDiff from '@/useVisualViewportDiff';
-import SmoothHeightTransition from '@/components/smoothTransition/SmoothHeightTransition.vue';
-import BaseLoader from '@/components/basePreloader/BaseLoader.vue';
-import { IconNames } from '@/components/baseIcon/iconNames';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import { usePerfectScrollbar } from '@/usePerfectScrollbar';
+import { usePopupStore } from '@fc/popupsContainer/composables/popupStore/usePopupStore';
+import type { PopupName } from '@fc/popupsContainer/composables/popupStore/types';
+// import useVisualViewportDiff from '@fc/useVisualViewportDiff';
+import SmoothHeightTransition from '@fc/components/smoothTransition/SmoothHeightTransition.vue';
+import BaseLoader from '@fc/components/basePreloader/BaseLoader.vue';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import { usePerfectScrollbar } from '@fc/usePerfectScrollbar';
 
 const emit = defineEmits(['close']);
 
@@ -139,7 +139,7 @@ const onWrapClick = () => {
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-popup-wrap {
   position: fixed;
   top: 0;

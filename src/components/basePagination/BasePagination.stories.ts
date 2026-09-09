@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref, watch } from 'vue';
 
-import BasePagination from '@/components/basePagination/BasePagination.vue';
+import BasePagination from '@fc/components/basePagination/BasePagination.vue';
 
 const meta = {
   title: 'UI/Pagination',

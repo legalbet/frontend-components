@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { Size } from '@/components/types/BaseElementsType';
+import { Size } from '@fc/components/types/BaseElementsType';
 
 interface Props {
   label?: string;
@@ -52,7 +52,7 @@ function handleChange(event: Event) {
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .switcher-container {
   .switcher {
     display: inline-flex;

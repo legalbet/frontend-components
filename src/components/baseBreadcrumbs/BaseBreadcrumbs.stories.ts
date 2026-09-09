@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { defineComponent } from 'vue';
 
-import BaseBreadcrumbs from '@/components/baseBreadcrumbs/BaseBreadcrumbs.vue';
+import BaseBreadcrumbs from '@fc/components/baseBreadcrumbs/BaseBreadcrumbs.vue';
 
 type Crumb = { name: string; link: string };
 type BaseBreadcrumbsArgs = {

@@ -49,7 +49,7 @@ const colorVar = computed(() => {
 </template>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-indicator {
   display: inline-block;
   position: relative;

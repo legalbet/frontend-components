@@ -53,11 +53,11 @@ import { computed watch nextTick } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import type { Swiper as SwiperClass, SwiperOptions } from 'swiper/types';
 import { FreeMode, Navigation, Pagination, Autoplay, Zoom } from 'swiper/modules';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import { IconNames } from '@/components/baseIcon/iconNames';
-import BaseButton from '@/components/baseButton/BaseButton.vue';
-import { ButtonShape, ButtonVariant, ButtonColor } from '@/components/baseButton/types';
-import { ScreenSize } from '@/ScreenSize';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import BaseButton from '@fc/components/baseButton/BaseButton.vue';
+import { ButtonShape, ButtonVariant, ButtonColor } from '@fc/components/baseButton/types';
+import { ScreenSize } from '@fc/ScreenSize';
 import 'swiper/css/pagination';
 import 'swiper/css/zoom';
 const { isMobile } = useDevice();
@@ -268,7 +268,7 @@ watch([() => props.items.length, () => props.activeSlideId, () => props.activeSl
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-swiper {
   position: relative;
   //Обрезаем краем экрана на мобилке

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mountSuspended } from '@nuxt/test-utils/runtime';
 import { nextTick } from 'vue';
-import TabsButtons from '@/components/tabs/tabsButtons/TabsButtons.vue';
+import TabsButtons from '@fc/components/tabs/tabsButtons/TabsButtons.vue';
 
 describe('TabsButtons.vue', () => {
   let defaultTabs = [

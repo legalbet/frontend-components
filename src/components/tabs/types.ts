@@ -1,5 +1,5 @@
-import type { WebAnalyticsGoal } from '@/types/external-types';
-import type { IconNames } from '@/components/baseIcon/iconNames';
+import type { WebAnalyticsGoal } from '@fc/types/external-types';
+import type { IconNames } from '@fc/components/baseIcon/iconNames';
 
 export type TabItem = {
   id?: string | number;

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 import { ref, computed } from 'vue';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import { IconNames } from '@/components/baseIcon/iconNames';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
 
 const meta = {
   title: 'UI/Icon',

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import BaseCounter from '@/components/counter/BaseCounter.vue';
-import { Size, Color } from '@/components/types/BaseElementsType';
+import BaseCounter from '@fc/components/counter/BaseCounter.vue';
+import { Size, Color } from '@fc/components/types/BaseElementsType';
 
 const meta = {
   title: 'UI/Counter',

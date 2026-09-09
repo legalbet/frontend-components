@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import BaseIndicator from '@/components/BaseIndicator.vue';
+import BaseIndicator from '@fc/components/BaseIndicator.vue';
 
 const meta = {
   title: 'UI/Indicator',

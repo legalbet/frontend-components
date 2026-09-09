@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { Lang } from '@/types/Lang';
-import { ContentEmptyType } from '@/components/baseContentEmpty/types';
-import { useConfigStore } from '@/composables/useConfigStore';
+import { Lang } from '@fc/types/Lang';
+import { ContentEmptyType } from '@fc/components/baseContentEmpty/types';
+import { useConfigStore } from '@fc/composables/useConfigStore';
 
 const { t } = useConfigStore();
 const props = defineProps<{

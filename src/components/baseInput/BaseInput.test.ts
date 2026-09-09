@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { mount } from '@vue/test-utils';
-import BaseInput from '@/components/baseInput/BaseInput.vue';
-import { InputType, InputSizeType } from '@/components/baseInput/types';
+import BaseInput from '@fc/components/baseInput/BaseInput.vue';
+import { InputType, InputSizeType } from '@fc/components/baseInput/types';
 
 describe('BaseInput', () => {
   it('renders input with label and placeholder', () => {

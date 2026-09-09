@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mountSuspended } from '@nuxt/test-utils/runtime';
 import { nextTick } from 'vue';
-import BaseNote from '@/components/baseNote/BaseNote.vue';
-import { NoteStyle, NoteType, NoteSize, NOTE_ICONS } from '@/components/baseNote/NoteTypes';
+import BaseNote from '@fc/components/baseNote/BaseNote.vue';
+import { NoteStyle, NoteType, NoteSize, NOTE_ICONS } from '@fc/components/baseNote/NoteTypes';
 
 describe('BaseNote.vue', () => {
   let wrapper: any;

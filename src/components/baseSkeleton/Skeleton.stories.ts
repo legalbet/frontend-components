@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import Skeleton from '@/components/baseSkeleton/BaseSkeleton.vue';
+import Skeleton from '@fc/components/baseSkeleton/BaseSkeleton.vue';
 
 const VARIANTS = [
   '',

@@ -1,5 +1,5 @@
-import type { LocationQuery } from '@/types/vue-router';
-import type { SelectedFilters } from '@/filter/types';
+import type { LocationQuery } from '@fc/types/vue-router';
+import type { SelectedFilters } from '@fc/filter/types';
 
 const isFilterKey = (key: string) => key.endsWith('[]');
 

@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { Size } from '@/components/types/BaseElementsType';
+import { Size } from '@fc/components/types/BaseElementsType';
 
 withDefaults(
   defineProps<{
@@ -59,7 +59,7 @@ function handleChange(event: Event) {
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .radio-container {
   display: flex;
   gap: rem(8px);

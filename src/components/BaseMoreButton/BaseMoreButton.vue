@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import BaseLink from '@/components/BaseLink.vue';
-import BaseLoader from '@/components/basePreloader/BaseLoader.vue';
+import BaseLink from '@fc/components/BaseLink.vue';
+import BaseLoader from '@fc/components/basePreloader/BaseLoader.vue';
 
 const props = withDefaults(
   defineProps<{
@@ -23,7 +23,7 @@ const { isMobile } = useDevice();
   </div>
 </template>
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-more-button {
   display: flex;
   justify-content: center;

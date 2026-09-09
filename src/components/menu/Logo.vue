@@ -11,14 +11,14 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue';
-import { LegalEvent } from '@/types/LegalEvents';
+import { LegalEvent } from '@fc/types/LegalEvents';
 
-import Logo from '@/assets/img/legalbet-logo.svg';
-import LogoWhite from '@/assets/img/legalbet-logo-white.svg';
-import { Locale } from '@/types/Locale';
-import { Lang } from '@/types/Lang';
+import Logo from '@fc/assets/img/legalbet-logo.svg';
+import LogoWhite from '@fc/assets/img/legalbet-logo-white.svg';
+import { Locale } from '@fc/types/Locale';
+import { Lang } from '@fc/types/Lang';
 import { inject } from 'vue';
-import { TRANSLATION_KEY } from '@/types/injection-keys';
+import { TRANSLATION_KEY } from '@fc/types/injection-keys';
 const _ = inject(TRANSLATION_KEY, (key: string) => key);
 
 const props = defineProps<{
@@ -56,7 +56,7 @@ onUnmounted(() => {
 });
 </script>
 <style lang="scss" scoped>
-@use '@/scss/settings' as *;
+@use '@fc/scss/settings' as *;
 .new-site-logo {
   position: relative;
   margin-top: rem(2px);

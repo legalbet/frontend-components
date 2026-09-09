@@ -52,14 +52,14 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Lang } from '@/types/Lang';
-import FilterSection from '@/filter/components/FilterSection.vue';
-import type { FilterProps, NewFilterSectionType } from '@/filter/types';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import BaseLink from '@/components/BaseLink.vue';
-import { IconNames } from '@/components/baseIcon/iconNames';
-import { Size } from '@/components/types/BaseElementsType';
-import { useConfigStore } from '@/composables/useConfigStore';
+import { Lang } from '@fc/types/Lang';
+import FilterSection from '@fc/filter/components/FilterSection.vue';
+import type { FilterProps, NewFilterSectionType } from '@fc/filter/types';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import BaseLink from '@fc/components/BaseLink.vue';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import { Size } from '@fc/components/types/BaseElementsType';
+import { useConfigStore } from '@fc/composables/useConfigStore';
 
 const { t } = useConfigStore();
 const props = withDefaults(defineProps<FilterProps>(), {
@@ -78,7 +78,7 @@ function handleResetAll() {
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .filter-main {
   padding: var(--padding-base) 0;
   display: flex;

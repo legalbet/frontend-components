@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mountSuspended } from '@nuxt/test-utils/runtime';
 import { nextTick } from 'vue';
-import BaseTabs from '@/components/tabs/baseTabs/BaseTabs.vue';
+import BaseTabs from '@fc/components/tabs/baseTabs/BaseTabs.vue';
 import {IconNames} from "~/shared/ui";
 
 describe('BaseTabs.vue', () => {

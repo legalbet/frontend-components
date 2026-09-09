@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { mount } from '@vue/test-utils';
-import BaseRadio from '@/components/baseRadio/BaseRadio.vue';
-import { Size } from '@/components/types/BaseElementsType';
+import BaseRadio from '@fc/components/baseRadio/BaseRadio.vue';
+import { Size } from '@fc/components/types/BaseElementsType';
 
 
 describe('BaseRadio', () => {

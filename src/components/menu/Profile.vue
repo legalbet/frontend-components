@@ -10,11 +10,11 @@
 </template>
 
 <script setup lang="ts">
-import { Lang } from '@/types/Lang';
-import { RouteName } from '@/types/RouteName';
-import { MenuItemProfile, User } from '@/components/menu/types';
+import { Lang } from '@fc/types/Lang';
+import { RouteName } from '@fc/types/RouteName';
+import { MenuItemProfile, User } from '@fc/components/menu/types';
 import { inject, computed } from 'vue';
-import { TRANSLATION_KEY, ROUTE_KEY } from '@/types/injection-keys';
+import { TRANSLATION_KEY, ROUTE_KEY } from '@fc/types/injection-keys';
 
 const _ = inject(TRANSLATION_KEY, (key: string) => key);
 
@@ -59,7 +59,7 @@ const menuProfileItems = computed((): MenuItemProfile[] => [
 </script>
 
 <style lang="scss" scoped>
-@use '@/scss/settings' as *;
+@use '@fc/scss/settings' as *;
 
 .count_red {
   color: red;

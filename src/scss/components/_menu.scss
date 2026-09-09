@@ -1306,7 +1306,7 @@
         width: 100%;
         border-bottom: 0;
         &_cancel {
-          background: url('@/assets/img/menu-cancel.png') no-repeat center / contain;
+          background: url('@fc/assets/img/menu-cancel.png') no-repeat center / contain;
           position: absolute;
           top: 16px;
           right: 16px;
@@ -2877,7 +2877,7 @@
     margin: 0 14px;
     position: relative;
     .mobile-aside_new__form-label {
-      background: url('@/assets/img/menu-search.svg') no-repeat center / contain;
+      background: url('@fc/assets/img/menu-search.svg') no-repeat center / contain;
       width: 14px;
       height: 14px;
       position: absolute;

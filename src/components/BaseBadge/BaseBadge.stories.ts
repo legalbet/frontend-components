@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { computed } from 'vue';
 
-import BaseBadge from '@/components/BaseBadge/BaseBadge.vue';
-import { Color, ExtendedColor, Size, Variant } from '@/components/types/BaseElementsType';
-import { IconNames } from '@/components/baseIcon/iconNames';
+import BaseBadge from '@fc/components/BaseBadge/BaseBadge.vue';
+import { Color, ExtendedColor, Size, Variant } from '@fc/components/types/BaseElementsType';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
 
 const ALL_COLORS = [...Object.values(Color), ...Object.values(ExtendedColor)];
 const BADGE_SIZES = Object.values(Size).filter((s) => s !== Size.ExtraSmall);

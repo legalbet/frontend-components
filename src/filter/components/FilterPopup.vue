@@ -45,18 +45,18 @@
 
 <script setup lang="ts">
 import { computed unref } from 'vue';
-import BasePopup from '@/components/basePopup/BasePopup.vue';
-import type { FilterProps } from '@/filter/types';
-import { PopupName, type PopupParams } from '@/popupsContainer/composables/popupStore/types';
-import FilterMain from '@/filter/components/FilterMain.vue';
-import { usePopupStore } from '@/popupsContainer/composables/popupStore/usePopupStore';
-import { IconNames } from '@/components/baseIcon/iconNames';
-import { Lang } from '@/types/Lang';
+import BasePopup from '@fc/components/basePopup/BasePopup.vue';
+import type { FilterProps } from '@fc/filter/types';
+import { PopupName, type PopupParams } from '@fc/popupsContainer/composables/popupStore/types';
+import FilterMain from '@fc/filter/components/FilterMain.vue';
+import { usePopupStore } from '@fc/popupsContainer/composables/popupStore/usePopupStore';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import { Lang } from '@fc/types/Lang';
 import BaseIcon from '../../components/baseIcon/BaseIcon.vue';
-import BaseButton from '@/components/baseButton/BaseButton.vue';
-import { ButtonColor, ButtonVariant } from '@/components/baseButton/types';
+import BaseButton from '@fc/components/baseButton/BaseButton.vue';
+import { ButtonColor, ButtonVariant } from '@fc/components/baseButton/types';
 import { getPluralFormByCount } from '../../../core/utils/getPluralFormByCount';
-import { useConfigStore } from '@/composables/useConfigStore';
+import { useConfigStore } from '@fc/composables/useConfigStore';
 
 const { t } = useConfigStore();
 const configStore = useConfigStore();
@@ -90,7 +90,7 @@ const totalCountText = computed(() => {
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .filter-popup {
   .filter-main {
     padding: 0;

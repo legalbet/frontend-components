@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import BaseBadgeRating from '@/components/BaseBadge/BaseBadgeRating.vue';
+import BaseBadgeRating from '@fc/components/BaseBadge/BaseBadgeRating.vue';
 
 const meta: Meta = {
   title: 'Features/Elements/BaseBadgeRating',

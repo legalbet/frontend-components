@@ -25,13 +25,13 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import BaseButton from '@/components/baseButton/BaseButton.vue';
-import BaseDropdown from '@/components/dropdown/BaseDropdown.vue';
-import BaseDropdownItem from '@/components/dropdown/BaseDropdownItem.vue';
-import { ButtonColor } from '@/components/baseButton/types';
-import { IconNames } from '@/components/baseIcon/iconNames';
-import type { SortOption } from '@/sorting/types';
-import { Size } from '@/components/types/BaseElementsType';
+import BaseButton from '@fc/components/baseButton/BaseButton.vue';
+import BaseDropdown from '@fc/components/dropdown/BaseDropdown.vue';
+import BaseDropdownItem from '@fc/components/dropdown/BaseDropdownItem.vue';
+import { ButtonColor } from '@fc/components/baseButton/types';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import type { SortOption } from '@fc/sorting/types';
+import { Size } from '@fc/components/types/BaseElementsType';
 
 const props = defineProps<{
   modelValue?: string;
@@ -52,7 +52,7 @@ function setSelectedOption(option: SortOption) {
 </script>
 
 <style lang="scss" scoped>
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .sort-selector {
   &__dropdown {
     padding: rem(8px) 0;

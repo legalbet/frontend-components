@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref } from 'vue';
-import BaseCheckbox from '@/components/baseCheckbox/BaseCheckbox.vue';
-import BaseSwitcher from '@/components/baseSwitcher/BaseSwitcher.vue';
-import BaseRadio from '@/components/baseRadio/BaseRadio.vue';
+import BaseCheckbox from '@fc/components/baseCheckbox/BaseCheckbox.vue';
+import BaseSwitcher from '@fc/components/baseSwitcher/BaseSwitcher.vue';
+import BaseRadio from '@fc/components/baseRadio/BaseRadio.vue';
 
 const meta = {
   title: 'UI/FormControls',

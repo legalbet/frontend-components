@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import FilterMain from '@/filter/components/FilterMain.vue';
+import FilterMain from '@fc/filter/components/FilterMain.vue';
 
 const meta: Meta = {
   title: 'Features/Elements/Filter',

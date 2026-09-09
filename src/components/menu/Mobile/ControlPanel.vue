@@ -24,11 +24,11 @@
 </template>
 
 <script setup lang="ts">
-import { Lang } from '@/types/Lang';
-import { User } from '@/types/User';
+import { Lang } from '@fc/types/Lang';
+import { User } from '@fc/types/User';
 import { asset } from '../utils';
 import { inject } from 'vue';
-import { TRANSLATION_KEY } from '@/types/injection-keys';
+import { TRANSLATION_KEY } from '@fc/types/injection-keys';
 const _ = inject(TRANSLATION_KEY, (key: string) => key);
 
 defineProps<{
@@ -41,7 +41,7 @@ defineProps<{
 </script>
 
 <style lang="scss">
-@use '@/scss/settings' as *;
+@use '@fc/scss/settings' as *;
 .burger-menu-button {
   display: flex;
   gap: rem(16px);

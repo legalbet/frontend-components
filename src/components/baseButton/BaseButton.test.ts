@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
 import { defineComponent } from 'vue';
-import BaseButton from '@/components/baseButton/BaseButton.vue';
-import { ButtonColor, ButtonTag, ButtonVariant } from '@/components/baseButton/types';
-import { Size } from '@/components/types/BaseElementsType';
-import { IconNames } from '@/components/baseIcon/iconNames';
+import BaseButton from '@fc/components/baseButton/BaseButton.vue';
+import { ButtonColor, ButtonTag, ButtonVariant } from '@fc/components/baseButton/types';
+import { Size } from '@fc/components/types/BaseElementsType';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
 
 describe('BaseButton', () => {
   const BaseIconStub = defineComponent({

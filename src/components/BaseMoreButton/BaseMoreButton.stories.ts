@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { defineComponent } from 'vue';
 
-import BaseMoreButton from '@/components/BaseMoreButton/BaseMoreButton.vue';
+import BaseMoreButton from '@fc/components/BaseMoreButton/BaseMoreButton.vue';
 
 const NuxtLinkStub = defineComponent({
   name: 'NuxtLink',

@@ -43,11 +43,11 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { ButtonColor, ButtonTag, ButtonVariant, ButtonShape } from '@/components/baseButton/types';
-import { Size } from '@/components/types/BaseElementsType';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import type { IconParams } from '@/components/baseIcon/types';
-import BaseLoading from '@/components/basePreloader/BaseLoader.vue';
+import { ButtonColor, ButtonTag, ButtonVariant, ButtonShape } from '@fc/components/baseButton/types';
+import { Size } from '@fc/components/types/BaseElementsType';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import type { IconParams } from '@fc/components/baseIcon/types';
+import BaseLoading from '@fc/components/basePreloader/BaseLoader.vue';
 
 type LoadingPosition = 'start' | 'end' | 'center';
 
@@ -144,7 +144,7 @@ function normalizeIconParams(params: IconParams): IconParams {
 </script>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .button {
   box-sizing: border-box;
   display: inline-flex;

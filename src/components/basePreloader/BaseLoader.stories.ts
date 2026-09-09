@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import BaseLoader from '@/components/basePreloader/BaseLoader.vue';
+import BaseLoader from '@fc/components/basePreloader/BaseLoader.vue';
 
 const meta = {
   title: 'UI/Loader',

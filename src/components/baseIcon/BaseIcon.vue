@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { IconParams } from '@/components/baseIcon/types';
+import type { IconParams } from '@fc/components/baseIcon/types';
 
 const props = withDefaults(defineProps<IconParams>(), {
   tagName: 'i',

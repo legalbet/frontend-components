@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import BaseButton from '@/components/baseButton/BaseButton.vue';
-import { ButtonColor, ButtonShape, ButtonVariant } from '@/components/baseButton/types';
-import { Size } from '@/components/types/BaseElementsType';
-import { IconNames } from '@/components/baseIcon/iconNames';
+import BaseButton from '@fc/components/baseButton/BaseButton.vue';
+import { ButtonColor, ButtonShape, ButtonVariant } from '@fc/components/baseButton/types';
+import { Size } from '@fc/components/types/BaseElementsType';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
 type PaginationItem = number | 'ellipsis';
 
 const props = withDefaults(
@@ -101,7 +101,7 @@ function setPage(page: number) {
 </template>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-pagination {
   display: inline-flex;
   align-items: center;

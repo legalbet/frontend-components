@@ -31,10 +31,10 @@
 
 <script setup lang="ts">
 import { ref computed } from 'vue';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import { IconNames } from '@/components/baseIcon/iconNames';
-import type { NewFilterSectionType, UiFilterItem, SelectedFilters } from '@/filter/types';
-import FilterCheckboxItem from '@/filter/components/FilterCheckboxItem.vue';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import type { NewFilterSectionType, UiFilterItem, SelectedFilters } from '@fc/filter/types';
+import FilterCheckboxItem from '@fc/filter/components/FilterCheckboxItem.vue';
 
 const props = defineProps<{
   section: NewFilterSectionType;
@@ -75,7 +75,7 @@ function toggleTooltipVisibility() {
 </script>
 
 <style scoped lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .filter-section {
   padding: var(--padding-base) var(--padding-base) 0;
   border-top: rem(1px) solid var(--border-divider);

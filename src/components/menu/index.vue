@@ -28,7 +28,7 @@ import MenuMobile from './Mobile.vue';
 import { onMounted, ref, useAttrs, provide } from 'vue';
 import { headerScrollHandler, siteHeaderToTop } from './utils';
 import Logo from './Logo.vue';
-import { TRANSLATION_KEY, ROUTE_KEY, type TranslationFunction, type RouteFunction } from '@/types/injection-keys';
+import { TRANSLATION_KEY, ROUTE_KEY, type TranslationFunction, type RouteFunction } from '@fc/types/injection-keys';
 
 defineProps<{
   data: {

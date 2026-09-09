@@ -1,6 +1,6 @@
 import { describe, it, vi, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import BaseTextarea from '@/components/baseTextarea/BaseTextarea.vue';
+import BaseTextarea from '@fc/components/baseTextarea/BaseTextarea.vue';
 
 describe('BaseTextarea', () => {
   it('renders textarea and label', () => {

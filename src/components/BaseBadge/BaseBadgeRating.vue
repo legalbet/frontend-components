@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import BaseTooltip from '@/components/baseTooltip/baseTooltip.vue';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import { useConfigStore } from '@/composables/useConfigStore';
-import { Position, Side } from '@/components/types/BaseElementsType';
-import type { IconParams } from '@/components/baseIcon/types';
+import BaseTooltip from '@fc/components/baseTooltip/baseTooltip.vue';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import { useConfigStore } from '@fc/composables/useConfigStore';
+import { Position, Side } from '@fc/components/types/BaseElementsType';
+import type { IconParams } from '@fc/components/baseIcon/types';
 
 const { t } = useConfigStore();
 
@@ -93,7 +93,7 @@ const rootClass = computed(() => [
 </template>
 
 <style scoped lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-status {
   border-radius: rem(4px);
   display: flex;

@@ -18,10 +18,10 @@
 
 <script setup lang="ts">
 import { useSlots } from 'vue';
-import type { TabButtonItem } from '@/components/tabs/types';
-import { TabsVariant, TabsTheme } from '@/components/tabs/types';
-import { useTabs } from '@/components/tabs/useTabs';
-import TabButton from '@/components/tabs/tabsButtons/TabButton.vue';
+import type { TabButtonItem } from '@fc/components/tabs/types';
+import { TabsVariant, TabsTheme } from '@fc/components/tabs/types';
+import { useTabs } from '@fc/components/tabs/useTabs';
+import TabButton from '@fc/components/tabs/tabsButtons/TabButton.vue';
 
 const props = withDefaults(
   defineProps<{
@@ -51,7 +51,7 @@ const { normalizedTabs, setActive } = useTabs({
 </script>
 
 <style lang="scss" scoped>
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .tabs-buttons {
   display: flex;
   align-items: center;

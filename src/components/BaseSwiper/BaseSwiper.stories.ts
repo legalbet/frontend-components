@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { onMounted, onUnmounted } from 'vue';
-import BaseSwiper from '@/components/BaseSwiper/BaseSwiper.vue';
+import BaseSwiper from '@fc/components/BaseSwiper/BaseSwiper.vue';
 
 const meta: Meta<typeof BaseSwiper> = {
   title: 'UI/Swiper',

@@ -1,5 +1,5 @@
 import { inject } from 'vue';
-import { TRANSLATION_KEY, ROUTE_KEY } from '@/types/injection-keys';
+import { TRANSLATION_KEY, ROUTE_KEY } from '@fc/types/injection-keys';
 
 // Заглушка для useConfigStore из host-проекта
 // При использовании в host-проекте (Nuxt) эта функция должна быть заменена

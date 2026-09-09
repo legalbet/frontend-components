@@ -35,9 +35,9 @@
 <script setup lang="ts">
 import { ref computed } from 'vue';
 // TODO: больше пропсов на стили сделать
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
-import { IconNames } from '@/components/baseIcon/iconNames';
-import DefaultPopover from '@/components/basePopover/DefaultPopover.vue';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import DefaultPopover from '@fc/components/basePopover/DefaultPopover.vue';
 
 type DropdownPosition = 'top' | 'bottom' | 'left' | 'right';
 
@@ -70,7 +70,7 @@ const dropdownStyles = computed(() => ({
 }));
 </script>
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .dropdown {
   position: relative;
   &__inner {

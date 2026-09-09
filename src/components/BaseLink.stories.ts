@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { defineComponent } from 'vue';
 
-import BaseLink from '@/components/BaseLink.vue';
-import { LinkColor, Size } from '@/components/types/BaseElementsType';
+import BaseLink from '@fc/components/BaseLink.vue';
+import { LinkColor, Size } from '@fc/components/types/BaseElementsType';
 
 type BaseLinkArgs = {
   color?: LinkColor;

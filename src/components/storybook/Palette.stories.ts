@@ -1,4 +1,4 @@
-import ColorTokensViewer from '@/components/storybook/ColorTokensViewer.vue';
+import ColorTokensViewer from '@fc/components/storybook/ColorTokensViewer.vue';
 
 export default {
   title: 'Features/Elements/Color Palette',

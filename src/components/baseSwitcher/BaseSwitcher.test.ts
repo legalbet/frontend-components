@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import BaseSwitcher from '@/components/baseSwitcher/BaseSwitcher.vue';
-import { Size } from '@/components/types/BaseElementsType';
+import BaseSwitcher from '@fc/components/baseSwitcher/BaseSwitcher.vue';
+import { Size } from '@fc/components/types/BaseElementsType';
 
 describe('BaseSwitcher', () => {
   it('renders with label and id', () => {

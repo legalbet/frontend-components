@@ -1,6 +1,6 @@
 import { describe, test, expect, beforeEach, vi } from 'vitest';
-import { ValidationRules } from '@/formValidation/types';
-import {useFormWithValidation} from "@/formValidation/useFormWithValidation";
+import { ValidationRules } from '@fc/formValidation/types';
+import {useFormWithValidation} from "@fc/formValidation/useFormWithValidation";
 
 describe('useFormValidation', () => {
   const beforeSendMock = vi.fn(async (_formData) => {});

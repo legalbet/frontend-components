@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ComponentPublicInstance } from 'vue';
 import type { Placement } from '@popperjs/core';
-import usePopper from '@/usePoper';
+import usePopper from '@fc/usePoper';
 
 type PopoverTrigger = 'hover' | 'click' | 'manual';
 type FloatingPlacement = 'top' | 'bottom' | 'left' | 'right';

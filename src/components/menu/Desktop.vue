@@ -75,8 +75,8 @@ import { computed, nextTick, ref, onMounted, inject } from 'vue';
 import { MenuItemType } from './types';
 import SubMenu from './SubMenu.vue';
 import { isMenuItemHidden, isVisibleMenuItem } from './utils';
-import { Lang } from '@/types/Lang';
-import { TRANSLATION_KEY } from '@/types/injection-keys';
+import { Lang } from '@fc/types/Lang';
+import { TRANSLATION_KEY } from '@fc/types/injection-keys';
 
 const _ = inject(TRANSLATION_KEY, (key: string) => key);
 
@@ -339,7 +339,7 @@ function getActiveMenuItem(menuItems: MenuItemType[], currentUrl: string, parent
 </script>
 
 <style lang="scss">
-@use '@/scss/settings' as *;
+@use '@fc/scss/settings' as *;
 .menu-desktop-container {
   color: color(black-80);
   font-size: rem(14px);

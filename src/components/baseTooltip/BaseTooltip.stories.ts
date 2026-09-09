@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { ref } from 'vue';
 
-import BaseTooltip from '@/components/baseTooltip/baseTooltip.vue';
-import BaseButton from '@/components/baseButton/BaseButton.vue';
-import { ButtonColor, ButtonShape, ButtonVariant } from '@/components/baseButton/types';
-import { Size } from '@/components/types/BaseElementsType';
+import BaseTooltip from '@fc/components/baseTooltip/baseTooltip.vue';
+import BaseButton from '@fc/components/baseButton/BaseButton.vue';
+import { ButtonColor, ButtonShape, ButtonVariant } from '@fc/components/baseButton/types';
+import { Size } from '@fc/components/types/BaseElementsType';
 
 const meta = {
   title: 'UI/Tooltip',

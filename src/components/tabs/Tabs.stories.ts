@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import TabsButtons from '@/components/tabs/tabsButtons/TabsButtons.vue';
-import TabFilter from '@/components/tabs/tabsButtons/TabFilter.vue';
+import TabsButtons from '@fc/components/tabs/tabsButtons/TabsButtons.vue';
+import TabFilter from '@fc/components/tabs/tabsButtons/TabFilter.vue';
 import { ref } from 'vue';
 import type { TabButtonItem } from './types';
-import { IconNames } from '@/components/baseIcon/iconNames';
-import { Color } from '@/components/types/BaseElementsType';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import { Color } from '@fc/components/types/BaseElementsType';
 
 const meta: Meta = {
   computed: {

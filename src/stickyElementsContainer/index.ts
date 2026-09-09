@@ -1,3 +1,3 @@
-import StickyElementsContainer from '@/stickyElementsContainer/components/StickyElementsContainer.vue';
+import StickyElementsContainer from '@fc/stickyElementsContainer/components/StickyElementsContainer.vue';
 
 export { StickyElementsContainer };

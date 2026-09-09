@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref computed watch onBeforeUnmount } from 'vue';
-import DefaultPopover from '@/components/basePopover/DefaultPopover.vue';
-import { Position, Side } from '@/components/types/BaseElementsType';
+import DefaultPopover from '@fc/components/basePopover/DefaultPopover.vue';
+import { Position, Side } from '@fc/components/types/BaseElementsType';
 
 type TooltipTrigger = 'hover' | 'click' | 'manual';
 type TooltipPlacement = Position;
@@ -163,7 +163,7 @@ const tooltipClass = computed(() => {
 </template>
 
 <style lang="scss">
-@use "@/scss/settings" as *;
+@use "@fc/scss/settings" as *;
 .base-tooltip {
   display: inline-flex;
 

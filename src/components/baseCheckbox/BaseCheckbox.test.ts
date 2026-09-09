@@ -1,6 +1,6 @@
 import { describe, it, vi, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import BaseCheckbox from '@/components/baseCheckbox/BaseCheckbox.vue';
+import BaseCheckbox from '@fc/components/baseCheckbox/BaseCheckbox.vue';
 
 describe('BaseCheckbox', () => {
   it('renders checkbox with labelHtml', () => {

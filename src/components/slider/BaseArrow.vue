@@ -10,8 +10,8 @@
 </template>
 
 <script setup lang="ts">
-import { IconNames } from '@/components/baseIcon/iconNames';
-import BaseIcon from '@/components/baseIcon/BaseIcon.vue';
+import { IconNames } from '@fc/components/baseIcon/iconNames';
+import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
 </script>
 
 <style lang="scss">

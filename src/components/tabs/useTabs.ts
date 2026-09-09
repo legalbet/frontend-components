@@ -1,5 +1,5 @@
 import type { MaybeRefOrGetter } from 'vue';
-import type { TabItem } from '@/components/tabs/types';
+import type { TabItem } from '@fc/components/tabs/types';
 
 export function useTabs<T extends TabItem>(params: {
   tabs: MaybeRefOrGetter<T[]>;

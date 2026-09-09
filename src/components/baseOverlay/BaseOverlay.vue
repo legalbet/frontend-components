@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted onBeforeUnmount } from 'vue';
+import { onMounted, onBeforeUnmount } from 'vue';
 const props = withDefaults(
   defineProps<{
     white?: boolean;

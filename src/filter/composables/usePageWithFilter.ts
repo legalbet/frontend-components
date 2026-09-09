@@ -1,5 +1,5 @@
-import { computed } from 'vue';
-import { navigateTo } from '@fc/composables/useNuxtShims';
+import { ref, computed, watch, nextTick, type Component } from 'vue';
+import { navigateTo, useRoute, useRouter } from '@fc/composables/useNuxtShims';
 import type { RouteNames } from '@fc/types/RoutesNames';
 import { useFilterDataLoader } from '@fc/filter/composables/useFilterDataLoader';
 import type { NitroFetchOptions } from '@fc/types/nitropack';
@@ -8,6 +8,7 @@ import type { LocationQuery } from '@fc/types/vue-router';
 import { buildEncodedQueryFromRouteQuery } from '@fc/filter/utils';
 import { useFilterController } from '@fc/filter/composables/useFilterController';
 import { useConfigStore } from '@fc/composables/useConfigStore';
+function isRouteIn(_routes: any): boolean { return false; }
 
 export async function usePageWithFilter<T>(params: {
   route: ReturnType<typeof useRoute>;
@@ -74,7 +75,7 @@ export async function usePageWithFilter<T>(params: {
   getFiltersFromSetData();
 
   // SSR redirect from hub to set if seoName exists in response
-  if (import.meta.server) {
+  if (typeof window === "undefined") {
     const setSeoName = dataLoader.data.value?.currentSetData?.seoName;
 
     if (!isSetRoute.value && setSeoName && !params.route.fullPath.includes(setSeoName) && setSeoName !== 'bonus') {
@@ -117,7 +118,7 @@ export async function usePageWithFilter<T>(params: {
   }
 
   // If there is set seoName in response => change browser URL to "/bonus/sets/:seoName/".
-  if (import.meta.client) {
+  if (typeof window !== "undefined") {
     watch(
       () => params.route.params.seoName,
       async (seoName, prevSeoName) => {

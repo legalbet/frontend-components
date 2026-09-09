@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref computed onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 interface Props {
   filter?: (name: string) => boolean;
   title?: string;

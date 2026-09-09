@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref computed } from 'vue';
+import { ref, computed } from 'vue';
 import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
 import { IconNames } from '@fc/components/baseIcon/iconNames';
 import type { NewFilterSectionType, UiFilterItem, SelectedFilters } from '@fc/filter/types';

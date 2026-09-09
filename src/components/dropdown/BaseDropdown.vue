@@ -33,7 +33,7 @@
   </DefaultPopover>
 </template>
 <script setup lang="ts">
-import { ref computed } from 'vue';
+import { ref, computed } from 'vue';
 // TODO: больше пропсов на стили сделать
 import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
 import { IconNames } from '@fc/components/baseIcon/iconNames';

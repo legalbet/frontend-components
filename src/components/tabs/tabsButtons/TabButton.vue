@@ -100,7 +100,7 @@ function onClick() {
     border-radius: var(--radius-button-40);
     background: var(--bg-level);
 
-    @include mobile {
+    @media #{$md_max} {
       height: rem(32px);
       padding: rem(6px) rem(8px);
       --tab-icon-size: 24px;
@@ -247,7 +247,7 @@ function onClick() {
     height: rem(20px);
     border-radius: var(--radius-button-24);
 
-    @include mobile {
+    @media #{$md_max} {
       width: rem(24px);
       height: rem(24px);
     }

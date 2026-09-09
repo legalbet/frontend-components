@@ -1,4 +1,5 @@
 import type { $Fetch } from '@fc/types/nitropack';
+import { $fetch } from '@fc/composables/useNuxtShims';
 
 export type LegalCdnTokenResponse = {
   status?: string;

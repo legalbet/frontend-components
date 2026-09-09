@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref computed watch onMounted nextTick } from 'vue';
+import { ref, computed, watch, onMounted, nextTick } from 'vue';
 import BaseEmojiPicker from '@fc/components/baseImojiPicker/BaseEmojiPicker.vue';
 import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
 import { IconNames } from '@fc/components/baseIcon/iconNames';

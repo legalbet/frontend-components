@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed unref } from 'vue';
+import { computed, unref } from 'vue';
 import BasePopup from '@fc/components/basePopup/BasePopup.vue';
 import type { FilterProps } from '@fc/filter/types';
 import { PopupName, type PopupParams } from '@fc/popupsContainer/composables/popupStore/types';
@@ -55,7 +55,7 @@ import { Lang } from '@fc/types/Lang';
 import BaseIcon from '../../components/baseIcon/BaseIcon.vue';
 import BaseButton from '@fc/components/baseButton/BaseButton.vue';
 import { ButtonColor, ButtonVariant } from '@fc/components/baseButton/types';
-import { getPluralFormByCount } from '../../../core/utils/getPluralFormByCount';
+import { getPluralFormByCount } from '@fc/utils/getPluralFormByCount';
 import { useConfigStore } from '@fc/composables/useConfigStore';
 
 const { t } = useConfigStore();

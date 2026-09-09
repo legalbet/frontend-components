@@ -52,6 +52,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { computed } from "vue";
 import { Lang } from '@fc/types/Lang';
 import FilterSection from '@fc/filter/components/FilterSection.vue';
 import type { FilterProps, NewFilterSectionType } from '@fc/filter/types';

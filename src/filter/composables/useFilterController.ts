@@ -1,4 +1,4 @@
-import { computed, watch } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useRoute } from '@fc/composables/useNuxtShims';
 import { parseSelectedFilters, selectedFiltersToQuery, toggleSelected } from '@fc/filter/utils';
 import type { SelectedFilters } from '@fc/filter/types';

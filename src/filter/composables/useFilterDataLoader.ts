@@ -1,4 +1,4 @@
-import { watch } from 'vue';
+import { ref, watch, type Ref } from 'vue';
 import { debounce } from '@fc/utils/debounce';
 import { useFetchWithAbort } from '@fc/composables/useFetchWithAbort';
 import { useSsrFetch } from '@fc/composables/useSsrFetch';
@@ -29,7 +29,7 @@ export async function useFilterDataLoader<T>(options: {
     data.value = res;
   };
 
-  if (import.meta.client) {
+  if (typeof window !== "undefined") {
     const debounced = debounce(run, debounceMs);
 
     watch(

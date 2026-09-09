@@ -376,4 +376,10 @@ export enum Lang {
   NextLesson = 'Next lesson',
   CongratulationsCompletingCourse = 'Congratulations on completing the course',
   ContinueCourseButtonText = 'Continue course',
+  Change = 'Change',
+  Clear = 'Clear',
+  Show = 'Show',
+  NoBonusesFound = 'No bonuses were found for the given parameters. Try %s or %s filters, and bonuses will appear.',
+  BonusBonuses = 'bonus bonuses bonuses',
+  FilterBonuses = 'Filter bonuses',
 }

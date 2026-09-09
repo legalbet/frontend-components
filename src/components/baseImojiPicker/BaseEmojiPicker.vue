@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed onMounted onBeforeUnmount } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 type EmojiMartEmoji = {
   native?: string;
 } & Record<string, unknown>;

@@ -35,8 +35,14 @@
     "*.{js,ts,vue}": "pnpm lint-staged"
   },
   "peerDependencies": {
-    "vue": "^3.5.17",
-    "swiper": "^11.0.0"
+    "emoji-mart": "^5.6.0",
+    "swiper": "^11.0.0",
+    "vue": "^3.5.17"
+  },
+  "peerDependenciesMeta": {
+    "emoji-mart": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/node": "^24.0.13",
@@ -49,6 +55,7 @@
     "happy-dom": "^18.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
+    "sass-embedded": "^1.104.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.37.0",
     "vite": "^7.0.4",

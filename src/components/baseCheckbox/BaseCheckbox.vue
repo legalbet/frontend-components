@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed useSlots } from 'vue';
+import { computed, useSlots } from 'vue';
 type CheckboxSize = 'large' | 'medium' | 'small';
 
 const props = withDefaults(

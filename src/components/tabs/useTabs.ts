@@ -1,3 +1,4 @@
+import { computed, toValue } from 'vue';
 import type { MaybeRefOrGetter } from 'vue';
 import type { TabItem } from '@fc/components/tabs/types';
 

@@ -19,7 +19,7 @@ import { useRoute } from '@fc/composables/useNuxtShims';
 </template>
 
 <script setup lang="ts">
-import { computed onMounted onUnmounted } from 'vue';
+import { computed, onMounted, onUnmounted } from 'vue';
 import { MenuMobileBottom, useMenuStore, AdfoxApp, AdFoxBannerType, CookiesContainer } from '@fc/types/external-types';
 
 const adfoxbannerData = {

@@ -1,4 +1,4 @@
-import { ref, computed, unref } from 'vue';
+import { ref, computed, unref, watch, onMounted, onBeforeUnmount, type Ref } from 'vue';
 type ModelValue = File | File[] | null;
 
 type UploadTokenData = Record<string, unknown>;
@@ -160,7 +160,7 @@ export function useBaseFileInput(params: {
   }
 
   function ensureInput() {
-    if (!import.meta.client) return;
+    if (typeof window === "undefined") return;
     if (inputEl.value) return;
 
     inputEl.value = document.createElement('input');
@@ -180,7 +180,7 @@ export function useBaseFileInput(params: {
   });
 
   onBeforeUnmount(() => {
-    if (!import.meta.client) return;
+    if (typeof window === "undefined") return;
     if (!inputEl.value) return;
     inputEl.value.removeEventListener('change', onInputChange);
     inputEl.value.remove();
@@ -189,7 +189,7 @@ export function useBaseFileInput(params: {
 
   function open() {
     if (!canAddMore.value) return;
-    if (!import.meta.client) return;
+    if (typeof window === "undefined") return;
 
     ensureInput();
     if (!inputEl.value) return;

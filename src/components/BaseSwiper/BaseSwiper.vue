@@ -49,7 +49,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed watch nextTick } from 'vue';
+import { ref, getCurrentInstance } from "vue";
+import { useDevice } from "@fc/composables/useNuxtShims";
+import { computed, watch, nextTick } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import type { Swiper as SwiperClass, SwiperOptions } from 'swiper/types';
 import { FreeMode, Navigation, Pagination, Autoplay, Zoom } from 'swiper/modules';
@@ -275,7 +277,7 @@ watch([() => props.items.length, () => props.activeSlideId, () => props.activeSl
   margin-right: calc(var(--container-padding) * -1);
   margin-left: calc(var(--container-padding) * -1);
 
-  @include desktop {
+  @media #{$lg} {
     margin-right: 0;
     margin-left: 0;
   }
@@ -363,7 +365,7 @@ watch([() => props.items.length, () => props.activeSlideId, () => props.activeSl
   padding-right: var(--container-padding);
   padding-left: var(--container-padding);
 
-  @include desktop {
+  @media #{$lg} {
     padding-right: 0;
     padding-left: 0;
   }

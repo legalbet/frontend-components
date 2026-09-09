@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref computed watch onBeforeUnmount } from 'vue';
+import { ref, computed, watch, onBeforeUnmount } from 'vue';
 import DefaultPopover from '@fc/components/basePopover/DefaultPopover.vue';
 import { Position, Side } from '@fc/components/types/BaseElementsType';
 

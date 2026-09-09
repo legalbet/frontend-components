@@ -49,7 +49,7 @@ export function usePopupStore() {
     setActivePopup(null);
   };
 
-  if (import.meta.client) {
+  if (typeof window !== "undefined") {
     const route = useRoute();
     watch(
       () => route.fullPath,

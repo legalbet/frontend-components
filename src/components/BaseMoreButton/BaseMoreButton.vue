@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useDevice } from '@fc/composables/useNuxtShims';
 import BaseLink from '@fc/components/BaseLink.vue';
 import BaseLoader from '@fc/components/basePreloader/BaseLoader.vue';
 

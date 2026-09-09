@@ -5,6 +5,15 @@
     "emitDeclarationOnly": true,
     "outDir": "dist"
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "tests"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests",
+    "src/**/*.stories.ts",
+    "src/**/*.test.ts",
+    "src/**/*.e2e-test.ts"
+  ]
 }

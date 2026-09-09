@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed defineAsyncComponent } from 'vue';
+import { computed, defineAsyncComponent, type Component } from 'vue';
 import { PopupName } from '@fc/popupsContainer/composables/popupStore/types';
 import { usePopupStore } from '@fc/popupsContainer/composables/popupStore/usePopupStore';
 import BaseOverlay from '@fc/components/baseOverlay/BaseOverlay.vue';

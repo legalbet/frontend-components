@@ -6,14 +6,19 @@ declare module '*.vue' {
   export default component;
 }
 
+declare module 'emoji-mart';
+
+// Nuxt ClientOnly component stub
+declare const ClientOnly: any;
+
 // Отключаем JSX проверки для Vue шаблонов
 declare global {
   namespace JSX {
     interface IntrinsicElements {
       [elem: string]: any;
     }
-    interface Element extends Vue.VNode {}
-    interface ElementClass extends Vue.ComponentPublicInstance {}
+    interface Element extends Vue.VNode { }
+    interface ElementClass extends Vue.ComponentPublicInstance { }
     interface ElementAttributesProperty {
       $props: {};
     }

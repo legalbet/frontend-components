@@ -1,4 +1,11 @@
 import { ref, watch, type Ref } from 'vue';
+
+type FilterDataLoaderResult<T> = {
+  data: Ref<T | null>;
+  loading: Ref<boolean>;
+  error: Ref<unknown>;
+  refetch: () => Promise<void>;
+};
 import { debounce } from '@fc/utils/debounce';
 import { useFetchWithAbort } from '@fc/composables/useFetchWithAbort';
 import { useSsrFetch } from '@fc/composables/useSsrFetch';
@@ -8,7 +15,16 @@ export async function useFilterDataLoader<T>(options: {
   skipDataLoad?: Ref<boolean>;
   dataFetch: (signal?: AbortSignal) => Promise<T>;
   debounceMs?: number;
-}) {
+}): Promise<FilterDataLoaderResult<T>> {
+  return useFilterDataLoaderImpl(options);
+}
+
+async function useFilterDataLoaderImpl<T>(options: {
+  filters: Ref<SelectedFilters>;
+  skipDataLoad?: Ref<boolean>;
+  dataFetch: (signal?: AbortSignal) => Promise<T>;
+  debounceMs?: number;
+}): Promise<FilterDataLoaderResult<T>> {
   const debounceMs = options.debounceMs ?? 250;
 
   // SSR fetch
@@ -17,7 +33,7 @@ export async function useFilterDataLoader<T>(options: {
       key: 'bonus-page-initial-data',
       promise: () => options.dataFetch(),
     })
-  );
+  ) as unknown as Ref<T | null>;
 
   //Client: refetch on key changes (debounce + abort)
   const fetchWithAbort = useFetchWithAbort<T>();
@@ -29,7 +45,7 @@ export async function useFilterDataLoader<T>(options: {
     data.value = res;
   };
 
-  if (typeof window !== "undefined") {
+  if (typeof window !== 'undefined') {
     const debounced = debounce(run, debounceMs);
 
     watch(

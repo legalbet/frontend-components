@@ -5,7 +5,7 @@
         data-test="sort-selector-trigger"
         :color="ButtonColor.White"
         :startIconParams="{ iconName: IconNames.ArrowDownUp }"
-        :size="$device.isMobile ? Size.Small : Size.Medium"
+        :size="isMobile ? Size.Small : Size.Medium"
       >
         <span data-test="sort-selector-label">{{ selectedOption?.text }}</span>
       </BaseButton>
@@ -32,6 +32,9 @@ import { ButtonColor } from '@fc/components/baseButton/types';
 import { IconNames } from '@fc/components/baseIcon/iconNames';
 import type { SortOption } from '@fc/sorting/types';
 import { Size } from '@fc/components/types/BaseElementsType';
+import { useDevice } from '@fc/composables/useNuxtShims';
+
+const { isMobile } = useDevice();
 
 const props = defineProps<{
   modelValue?: string;
@@ -52,7 +55,7 @@ function setSelectedOption(option: SortOption) {
 </script>
 
 <style lang="scss" scoped>
-@use "@fc/scss/settings" as *;
+@use '@fc/scss/settings' as *;
 .sort-selector {
   &__dropdown {
     padding: rem(8px) 0;

@@ -60,18 +60,19 @@ export type InvitePopupParams = Record<string, any>;
 export enum AdFoxBannerType {
   Desktop = 'desktop',
   Mobile = 'mobile',
+  Catfish = 'catfish',
 }
 
 export const AdfoxApp = {
-  init: () => { },
-  loadBanner: () => { },
+  init: () => {},
+  loadBanner: () => {},
 };
 
 // cookies
 export const CookiesContainer = {
   get: (_key: string): string | null => null,
-  set: (_key: string, _value: string, _days?: number): void => { },
-  remove: (_key: string): void => { },
+  set: (_key: string, _value: string, _days?: number): void => {},
+  remove: (_key: string): void => {},
 };
 
 // mainMenu
@@ -85,7 +86,9 @@ export enum MenuMobileBottom {
 export function useMenuStore() {
   return {
     state: { items: [] },
-    init: () => { },
+    store: { value: { isOpenMenu: false } },
+    showBottomMenu: false,
+    init: () => {},
   };
 }
 

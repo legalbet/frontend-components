@@ -1,15 +1,22 @@
-import { ref, watch } from 'vue';
+import { ref, watch, type Ref } from 'vue';
+import { useRoute, useRouter } from '@fc/composables/useNuxtShims';
 import type { LocationQuery } from '@fc/types/vue-router';
 import { buildEncodedQueryFromRouteQuery } from '@fc/filter/utils';
+
+type SortingResult<TSort extends string> = {
+  selectedSort: Ref<TSort | undefined>;
+  getSortQuery: (sortBy?: TSort) => LocationQuery;
+  setSort: (sortBy?: TSort, navigation?: { path?: string; query?: LocationQuery }) => Promise<void>;
+};
 
 export function useSorting<TSort extends string>(params: {
   route: ReturnType<typeof useRoute>;
   router: ReturnType<typeof useRouter>;
   queryKey: string;
   values: readonly TSort[];
-}) {
+}): SortingResult<TSort> {
   const allowedValues = new Set<TSort>(params.values);
-  const selectedSort = ref<TSort | undefined>(parseSort(params.route.query));
+  const selectedSort = ref<TSort | undefined>(parseSort(params.route.query)) as unknown as Ref<TSort | undefined>;
 
   watch(
     () => params.route.query,

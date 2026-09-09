@@ -33,13 +33,10 @@ import BasePagination from './components/basePagination/BasePagination.vue';
 import BaseMoreButton from './components/BaseMoreButton/BaseMoreButton.vue';
 import BaseIndicator from './components/BaseIndicator.vue';
 import { useBaseFileInput } from './components/baseFileInput/composables/useBaseFileInput';
-import { usePageWithFilter } from './filter/composables/usePageWithFilter';
-import FilterMain from './filter/components/FilterMain.vue';
 import BaseTooltip from './components/baseTooltip/baseTooltip.vue';
 import TabsButtons from './components/tabs/tabsButtons/TabsButtons.vue';
 import TabButton from './components/tabs/tabsButtons/TabButton.vue';
 import TabFilter from './components/tabs/tabsButtons/TabFilter.vue';
-import BaseSwiper from './components/BaseSwiper/BaseSwiper.vue';
 import BaseOverlay from './components/baseOverlay/BaseOverlay.vue';
 import BaseLoader from './components/basePreloader/BaseLoader.vue';
 import { ContentEmpty, ContentEmptyType } from './components/baseContentEmpty';
@@ -48,56 +45,20 @@ import BaseBadge from './components/BaseBadge/BaseBadge.vue';
 import BasePopover from './components/basePopover/BasePopover.vue';
 import { AllColors } from './components/BaseBadge/types';
 import DefaultPopover from './components/basePopover/DefaultPopover.vue';
-import type {
-  FilterDataResponse,
-  FilterProps,
-  NewFilterSectionType,
-  FilterGroupResponse,
-  SelectedFilters,
-} from './filter/types';
-import {
-  PopupName,
-  type PopupParams,
-  type SocialRegisterParams,
-} from './popupsContainer/composables/popupStore/types';
+import { PopupName, type PopupParams, type SocialRegisterParams } from './popupsContainer/composables/popupStore/types';
 import BaseTabs from './components/tabs/baseTabs/BaseTabs.vue';
 import BaseCounter from './components/counter/BaseCounter.vue';
 import { buildEncodedQueryFromRouteQuery, selectedFiltersToQuery } from './filter/utils';
-import SortSelector from './sorting/SortSelector.vue';
-import { useSorting } from './sorting/useSorting';
-import type { SortOption } from './sorting/types';
 import Crypto from './encryption/Crypto';
 import BaseRadio from './components/baseRadio/BaseRadio.vue';
 import BaseSwitcher from './components/baseSwitcher/BaseSwitcher.vue';
 import BaseContentEmpty from './components/baseContentEmpty/ContentEmpty.vue';
 import SmoothHeightTransition from './components/smoothTransition/SmoothHeightTransition.vue';
 import GlobalLoader from './components/GlobalLoader.vue';
-import StickyElementsContainer from './stickyElementsContainer/components/StickyElementsContainer.vue';
 import { useIsMobile } from './composables/useIsMobile';
-import Menu from './components/menu/index.vue';
-import RouletteApp from './components/Roulette/RouletteApp.vue';
-import { useRouletteActions } from './components/Roulette/Composables/useRouletteActions';
-import type { Prize } from './components/Roulette/types';
-const BaseEmojiPicker = defineAsyncComponent(
-  () => import('./components/baseImojiPicker/BaseEmojiPicker.vue')
-);
+const BaseEmojiPicker = defineAsyncComponent(() => import('./components/baseImojiPicker/BaseEmojiPicker.vue'));
 
-export type {
-  TabItem,
-  TabButtonItem,
-  IconParams,
-  ValidationRule,
-  PopupParams,
-  SocialRegisterParams,
-  FieldConfig,
-  FilterDataResponse,
-  FilterProps,
-  NewFilterSectionType,
-  FilterGroupResponse,
-  SelectedFilters,
-  SortOption,
-  Prize,
-};
+export type { TabItem, TabButtonItem, IconParams, ValidationRule, PopupParams, SocialRegisterParams, FieldConfig };
 
 export {
   //composables
@@ -107,10 +68,7 @@ export {
   usePerfectScrollbar,
   useTheme,
   usePopupStore,
-  usePageWithFilter,
-  useSorting,
   useIsMobile,
-  useRouletteActions,
   buildEncodedQueryFromRouteQuery,
   selectedFiltersToQuery,
   //components
@@ -136,15 +94,12 @@ export {
   BaseMoreButton,
   BaseTooltip,
   BaseIndicator,
-  FilterMain,
   TabsButtons,
   TabButton,
   TabFilter,
-  BaseSwiper,
   BaseOverlay,
   BaseLoader,
   BaseCounter,
-  SortSelector,
   Crypto,
   BaseBadge,
   BaseBadgeRating,
@@ -155,9 +110,6 @@ export {
   BaseContentEmpty,
   SmoothHeightTransition,
   GlobalLoader,
-  StickyElementsContainer,
-  Menu,
-  RouletteApp,
   //types
   ValidationRules,
   ContentEmptyType,

@@ -4,8 +4,8 @@ import DefaultPopover from '@fc/components/basePopover/DefaultPopover.vue';
 import { Position, Side } from '@fc/components/types/BaseElementsType';
 
 type TooltipTrigger = 'hover' | 'click' | 'manual';
-type TooltipPlacement = Position;
-type TooltipAlign = Side;
+type TooltipPlacement = 'top' | 'bottom' | 'left' | 'right';
+type TooltipAlign = 'start' | 'center' | 'end';
 
 const props = withDefaults(
   defineProps<{
@@ -115,7 +115,7 @@ const tooltipClass = computed(() => {
     tag="span"
     class="base-tooltip"
     :class="{ fullWidth: props?.fullWidth }"
-    v-bind="props"
+    v-bind="{ ...props, closeDelay: props.closeDelay ?? undefined }"
     :open="localIsOpen"
     :strategy="props?.strategy"
     @update:open="onUpdateOpen"
@@ -163,7 +163,7 @@ const tooltipClass = computed(() => {
 </template>
 
 <style lang="scss">
-@use "@fc/scss/settings" as *;
+@use '@fc/scss/settings' as *;
 .base-tooltip {
   display: inline-flex;
 

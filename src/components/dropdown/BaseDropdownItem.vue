@@ -1,6 +1,6 @@
 <template>
   <div :class="['dropdown__item', computedClasses]">
-    <BaseIcon v-if="hasIcon" v-bind="props?.icon" :textColor="active ? 'white' : null" />
+    <BaseIcon v-if="hasIcon && props.icon?.iconName" v-bind="props.icon" :textColor="active ? 'white' : undefined" />
     {{ label }}
   </div>
 </template>
@@ -8,6 +8,7 @@
 import { computed } from 'vue';
 import { IconPosition } from '@fc/components/types/BaseElementsType';
 import BaseIcon from '@fc/components/baseIcon/BaseIcon.vue';
+import type { IconParams } from '@fc/components/baseIcon/types';
 
 const props = withDefaults(
   defineProps<{
@@ -15,7 +16,7 @@ const props = withDefaults(
     iconPosition?: IconPosition;
     disabled?: boolean;
     active?: boolean;
-    icon?: object;
+    icon?: IconParams;
   }>(),
   {
     iconPosition: IconPosition.NoIcon,
@@ -34,7 +35,7 @@ const computedClasses = computed(() => ({
 }));
 </script>
 <style lang="scss">
-@use "@fc/scss/settings" as *;
+@use '@fc/scss/settings' as *;
 .dropdown__item {
   display: flex;
   align-items: center;

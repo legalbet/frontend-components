@@ -1,6 +1,6 @@
-import { ref, watch } from 'vue';
+import { onBeforeMount, ref, watch } from 'vue';
 export function useTheme() {
-  const isClient = typeof window !== "undefined";
+  const isClient = typeof window !== 'undefined';
 
   const theme = ref(isClient ? localStorage.getItem('theme') || 'light' : 'light');
 

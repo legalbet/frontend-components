@@ -15,7 +15,11 @@
       <Swiper
         class="base-swiper__swiper"
         :modules="modules"
-        v-bind="sliderOptions"
+        v-bind="{
+          ...sliderOptions,
+          width: sliderOptions.width ?? undefined,
+          height: sliderOptions.height ?? undefined,
+        }"
         @swiper="onSwiperInit"
         @slideChange="onSlideChange"
         @reachEnd="onReachEnd"
@@ -49,8 +53,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, getCurrentInstance } from "vue";
-import { useDevice } from "@fc/composables/useNuxtShims";
+import { ref, getCurrentInstance } from 'vue';
+import { useDevice } from '@fc/composables/useNuxtShims';
 import { computed, watch, nextTick } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import type { Swiper as SwiperClass, SwiperOptions } from 'swiper/types';
@@ -270,7 +274,7 @@ watch([() => props.items.length, () => props.activeSlideId, () => props.activeSl
 </script>
 
 <style lang="scss">
-@use "@fc/scss/settings" as *;
+@use '@fc/scss/settings' as *;
 .base-swiper {
   position: relative;
   //Обрезаем краем экрана на мобилке

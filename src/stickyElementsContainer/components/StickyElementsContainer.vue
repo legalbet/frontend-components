@@ -1,4 +1,3 @@
-import { useRoute } from '@fc/composables/useNuxtShims';
 <template>
   <div class="sticky-container" :class="{ 'menu-open': menuStore.store.value.isOpenMenu }">
     <div id="sticky-top" class="sticky-container__top"></div>
@@ -19,7 +18,8 @@ import { useRoute } from '@fc/composables/useNuxtShims';
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted } from 'vue';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { useRoute } from '@fc/composables/useNuxtShims';
 import { MenuMobileBottom, useMenuStore, AdfoxApp, AdFoxBannerType, CookiesContainer } from '@fc/types/external-types';
 
 const adfoxbannerData = {
@@ -78,7 +78,7 @@ onMounted(async () => {
 </script>
 
 <style lang="scss">
-@use "@fc/scss/settings" as *;
+@use '@fc/scss/settings' as *;
 .sticky-container {
   position: fixed;
   bottom: 0;

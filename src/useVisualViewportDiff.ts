@@ -1,4 +1,4 @@
-import { ref, onMounted } from 'vue';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 export default function useVisualViewportDiff() {
   const diff = ref(0);
 

@@ -1,9 +1,18 @@
-import { ref, computed, type Ref } from 'vue';
+import { computed, ref, type Ref } from 'vue';
+import type { LocationQuery } from '@fc/types/vue-router';
+
+type NuxtRoute = {
+  path: string;
+  query: LocationQuery;
+  params: Record<string, string | string[] | undefined>;
+  meta: Record<string, unknown>;
+  fullPath: string;
+};
 
 // Заглушки для Nuxt auto-imports при standalone сборке библиотеки
 // В Nuxt-проекте эти функции предоставляются автоматически
 
-export function useRoute() {
+export function useRoute(): NuxtRoute {
   return {
     path: '/',
     query: {},
@@ -15,15 +24,15 @@ export function useRoute() {
 
 export function useRouter() {
   return {
-    push: (_url: string) => { },
-    replace: (_url: string) => { },
-    beforeEach: (_guard: any) => () => { },
+    push: (_url: string) => {},
+    replace: (_url: string) => {},
+    beforeEach: (_guard: any) => () => {},
     resolve: (_to: any) => ({ href: '/' }),
   };
 }
 
-export function useState<T>(key: string, init?: () => T) {
-  return ref(init ? init() : (undefined as unknown as T));
+export function useState<T>(key: string, init?: () => T): Ref<T> {
+  return ref(init ? init() : (undefined as unknown as T)) as unknown as Ref<T>;
 }
 
 export function navigateTo(_url: string, _options?: Record<string, any>): Promise<void> {

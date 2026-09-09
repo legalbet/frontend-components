@@ -1,4 +1,20 @@
-import { ref, computed, watch, nextTick, type Component } from 'vue';
+import { computed, nextTick, ref, watch, type Component, type ComputedRef, type Ref } from 'vue';
+
+type FilterPageData = {
+  currentSetData?: {
+    seoName?: string;
+    filterParams?: SelectedFilters;
+  } | null;
+};
+
+type PageWithFilterResult<T> = {
+  data: Ref<T | null>;
+  loading: Ref<boolean>;
+  onSetFilter: (section: string, id: number, checked: boolean) => Promise<void>;
+  onResetAll: () => Promise<void>;
+  selectedFilters: Ref<SelectedFilters>;
+  isAnyFilterApplied: ComputedRef<boolean>;
+};
 import { navigateTo, useRoute, useRouter } from '@fc/composables/useNuxtShims';
 import type { RouteNames } from '@fc/types/RoutesNames';
 import { useFilterDataLoader } from '@fc/filter/composables/useFilterDataLoader';
@@ -8,9 +24,11 @@ import type { LocationQuery } from '@fc/types/vue-router';
 import { buildEncodedQueryFromRouteQuery } from '@fc/filter/utils';
 import { useFilterController } from '@fc/filter/composables/useFilterController';
 import { useConfigStore } from '@fc/composables/useConfigStore';
-function isRouteIn(_routes: any): boolean { return false; }
+function isRouteIn(_routes: any): boolean {
+  return false;
+}
 
-export async function usePageWithFilter<T>(params: {
+export async function usePageWithFilter<T extends FilterPageData>(params: {
   route: ReturnType<typeof useRoute>;
   router: ReturnType<typeof useRouter>;
   hubRouteName: RouteNames;
@@ -18,7 +36,7 @@ export async function usePageWithFilter<T>(params: {
   dataFetch: (params?: { filters?: SelectedFilters; options?: NitroFetchOptions<never> }) => Promise<T>;
   //Параметры, которые не относятся к фильтрам, но их нужно сохранять при навигации между хабом и сетом
   preserveQueryKeys?: string[];
-}) {
+}): Promise<PageWithFilterResult<T>> {
   const { getPathByRoute } = useConfigStore();
   const hubPath = getPathByRoute(params.hubRouteName);
 
@@ -75,7 +93,7 @@ export async function usePageWithFilter<T>(params: {
   getFiltersFromSetData();
 
   // SSR redirect from hub to set if seoName exists in response
-  if (typeof window === "undefined") {
+  if (typeof window === 'undefined') {
     const setSeoName = dataLoader.data.value?.currentSetData?.seoName;
 
     if (!isSetRoute.value && setSeoName && !params.route.fullPath.includes(setSeoName) && setSeoName !== 'bonus') {
@@ -118,7 +136,7 @@ export async function usePageWithFilter<T>(params: {
   }
 
   // If there is set seoName in response => change browser URL to "/bonus/sets/:seoName/".
-  if (typeof window !== "undefined") {
+  if (typeof window !== 'undefined') {
     watch(
       () => params.route.params.seoName,
       async (seoName, prevSeoName) => {
@@ -148,6 +166,7 @@ export async function usePageWithFilter<T>(params: {
     watch(
       () => dataLoader.data.value,
       async (data) => {
+        if (!data) return;
         getFiltersFromSetData();
 
         const setSeoName = data.currentSetData?.seoName;
